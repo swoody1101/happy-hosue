@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.vue.mapper.BoardMapper">
+	
+	<select id="selectBoardList" resultType="BoardDto">
+		SELECT * FROM board 
+		ORDER BY bno DESC 
+		LIMIT #{start}, #{count};
+	</select>
+	
+	<select id="selectNotice" resultType="BoardDto">
+		SELECT * FROM board 
+		WHERE bnotice = true 
+		ORDER BY bno DESC 
+		LIMIT #{start}, #{count};
+	</select>
+	
+	<select id="selectBoardOne" resultType="BoardDto">
+		SELECT * FROM board
+		WHERE bno = #{bno}
+	</select>
+	
+	<select id="selectTotalBoardCount" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+	
+	<insert id="createBoard" parameterType="BoardDto">
+		INSERT INTO board (bwriter, btitle, bcontent, bnotice) 
+		values (#{bwriter}, #{btitle}, #{bcontent}, #{bnotice});
+	</insert>
+	
+	<update id="modifyBoard" parameterType="BoardDto">
+		UPDATE board
+		SET btitle = #{btitle},
+		bcontent = #{bcontent}
+		WHERE bno = #{bno}
+	</update>
+	
+	<delete id="deleteBoard">
+		DELETE FROM board
+		WHERE bno = #{bno}
+	</delete>
+	
+</mapper>

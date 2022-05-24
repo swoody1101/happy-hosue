@@ -3,7 +3,12 @@
     <h3>게시물 상세 페이지</h3>
     <div>
       <button @click="moveModifyArticle">수정</button>
-      <button @click="deleteArticle">삭제</button>
+      <button
+        @click="deleteArticle"
+        v-if="(article.bwriter = this.userInfo.userid)"
+      >
+        삭제
+      </button>
     </div>
     <div>
       <ul>
@@ -21,10 +26,11 @@
 </template>
 
 <script>
-import { getArticle, deleteArticle } from "@/api/board";
-// import { writeComment } from "@/api/comment";
-
 import CommentList from "@/components/board/comment/CommentList.vue";
+import { getArticle, deleteArticle } from "@/api/board";
+import { mapState } from "vuex";
+
+const memberStore = "memberStore";
 
 export default {
   name: "BoardDetail",
@@ -46,6 +52,9 @@ export default {
         console.log("삭제시 에러발생!!", error);
       },
     );
+  },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
     moveModifyArticle() {

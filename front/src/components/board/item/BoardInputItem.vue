@@ -4,12 +4,23 @@
     <form @submit="onSubmit" @reset="onReset">
       <div class="">
         <label for="writer">작성자</label>
-        <input type="text" id="writer" v-model="article.bwriter" required />
+        <input
+          type="text"
+          id="writer"
+          v-model="article.bwriter"
+          required
+          disabled
+        />
       </div>
       <div class="">
         <label for="title">제목</label>
         <input type="text" id="title" v-model="article.btitle" required />
       </div>
+
+      <div>
+        <input type="checkbox" v-model="article.bnotice" checked />공지사항
+      </div>
+
       <div class="">
         <textarea
           name=""
@@ -52,6 +63,7 @@ export default {
         bwriter: "",
         bcontent: "",
         breadCount: "",
+        bnotice: false,
       },
     };
   },

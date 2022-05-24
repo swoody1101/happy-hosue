@@ -28,6 +28,10 @@
 import CommentListItem from "@/components/board/comment/item/CommentListItem.vue";
 import { listComment, writeComment } from "@/api/comment";
 
+import { mapState } from "vuex";
+
+const memberStore = "memberStore";
+
 export default {
   name: "CommentList",
   components: { CommentListItem },
@@ -46,6 +50,9 @@ export default {
     this.getList();
     // console.log(this.comments);
   },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
+  },
 
   methods: {
     onSubmit(event) {
@@ -63,7 +70,7 @@ export default {
         {
           bno: this.bno,
           ccontent: this.reply,
-          cwriter: "admin",
+          cwriter: this.userInfo.userid,
         },
         (response) => {
           console.log(response.data);

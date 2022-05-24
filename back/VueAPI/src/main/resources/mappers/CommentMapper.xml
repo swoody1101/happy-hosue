@@ -6,7 +6,7 @@
 		SELECT * FROM comment
 		WHERE bno = #{bno}
 		ORDER BY cgroupOrder DESC,
-		cdepth ASC;
+		cdepth ASC
 		LIMIT #{start}, #{count};
 	</select>
 	

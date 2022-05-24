@@ -2,8 +2,11 @@ package com.ssafy.vue.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.ssafy.vue.dto.AreaInfo;
 
+@Mapper
 public interface AreaMapper {
 
 	int insert(AreaInfo area);
@@ -18,10 +21,11 @@ public interface AreaMapper {
 
 	List<String> dongList(String siguName, String gugunName);
 
-	String getAreaCode(String si);
+	String getAreaCodeBySi(String si);
 
-	String getAreaCode(String si, String gu);
+	String getAreaCodeBySiGu(String si, String gu);
 
-	String getAreaCode(String si, String gu, String dong);
+	String getAreaCodeBySiGuDong(String si, String gu, String dong);
 
+	List<String> getSiguCode();
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.vue.mapper.HouseInfoMapper">
+
+	<insert id="insert" parameterType="com.ssafy.vue.dto.HouseInfo">
+		INSERT INTO HOUSEINFO
+		(aptCode, aptName, areaCode, jibun, builtYear, area, floor) 
+		VALUES
+		(#{aptCode}, #{aptName}, #{areaCode}, #{jibun}, #{builtYear}, #{area}, #{floor}) 
+	</insert>
+	
+	<select id="select" parameterType="String" resultType="com.ssafy.vue.dto.HouseInfo">
+		SELECT * 
+		FROM HOUSEINFO 
+		WHERE aptCode = #{aptCode}
+	</select>
+
+</mapper>

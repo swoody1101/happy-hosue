@@ -55,17 +55,17 @@ public class AptController {
 		return new ResponseEntity<List<String>>(aptService.dongList(siguName, gugunName), HttpStatus.OK);
 	}
 
-	@ApiOperation(value = "거래정보 반환", notes = "거래정보 반환한다.", response = Object.class)
-	@GetMapping("/dealInfo")
-	@ResponseBody
-	public ResponseEntity<List<TempDealData>> dealInfo(String siguName, String gugunName, String dongName) {
-		logger.debug("dealInfo 호출");
-		String area = aptService.getAreaCode(siguName, gugunName, dongName);
-		return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area), HttpStatus.OK);
-	}
+//	@ApiOperation(value = "거래정보 반환", notes = "거래정보 반환한다.", response = Object.class)
+//	@GetMapping("/dealInfo")
+//	@ResponseBody
+//	public ResponseEntity<List<TempDealData>> dealInfo(String siguName, String gugunName, String dongName) {
+//		logger.debug("dealInfo 호출");
+//		String area = aptService.getAreaCode(siguName, gugunName, dongName);
+//		return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area), HttpStatus.OK);
+//	}
 
 	@ApiOperation(value = "검색 거래정보 반환", notes = "검색어가 있을 때 거래정보 반환한다.", response = Object.class)
-	@GetMapping("/dealInfo/")
+	@GetMapping("/dealInfo")
 	@ResponseBody
 	public ResponseEntity<List<TempDealData>> dealInfo(String siguName, String gugunName, String dongName,
 			String keyword) {

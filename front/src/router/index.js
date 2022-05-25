@@ -30,6 +30,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    children: [],
   },
   {
     path: "/user",

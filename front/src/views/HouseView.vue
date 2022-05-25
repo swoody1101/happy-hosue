@@ -23,6 +23,7 @@
     </b-row>
   </b-container>
 </template>
+
 <script>
 import HouseSearchBar from "@/components/house/HouseSearchBar.vue";
 import HouseMap from "@/components/house/HouseMap.vue";

@@ -22,6 +22,10 @@ function modifyArticle(article, success, fail) {
   api.put(`/board/modify`, JSON.stringify(article)).then(success).catch(fail);
 }
 
+function readCountUpArticle(articleno, success, fail) {
+  api.put(`/board/readcount/${articleno}`).then(success).catch(fail);
+}
+
 function deleteArticle(articleno, success, fail) {
   api.delete(`/board/delete/${articleno}`).then(success).catch(fail);
 }
@@ -32,5 +36,6 @@ export {
   writeArticle,
   getArticle,
   modifyArticle,
+  readCountUpArticle,
   deleteArticle,
 };

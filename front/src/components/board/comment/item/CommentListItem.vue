@@ -8,10 +8,15 @@
         <button @click="commentForm">답글작성</button>
       </td>
       <td>
-        <button>수정</button>
+        <button v-if="cwriter == userInfo.userid">수정</button>
       </td>
       <td>
-        <button @click="deleteComment">삭제</button>
+        <button
+          @click="deleteComment"
+          v-if="cwriter == userInfo.userid || userInfo.role == 'ROLE_ADMIN'"
+        >
+          삭제
+        </button>
       </td>
     </tr>
     <tr v-if="reply">

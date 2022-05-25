@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "test",
+  name: "HouseMap",
   data() {
     return {
       map: null,
@@ -33,7 +33,7 @@ export default {
           /* global kakao */
           script.onload = () => kakao.maps.load(this.initMap);
           script.src =
-            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520";
+            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520&libraries=services";
           document.head.appendChild(script);
         }
       },

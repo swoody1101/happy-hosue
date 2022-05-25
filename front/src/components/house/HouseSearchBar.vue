@@ -12,19 +12,19 @@
     </b-col> -->
     <b-col class="sm-3">
       <b-form-select
-        v-model="sidoCode"
+        v-model="sidoName"
         :options="sidos"
+        @change="getSido"
+      ></b-form-select>
+      <b-form-select
+        v-model="gugunName"
+        :options="guguns"
         @change="gugunList"
       ></b-form-select>
       <b-form-select
-        v-model="sidoCode"
-        :options="sidos"
-        @change="gugunList"
-      ></b-form-select>
-      <b-form-select
-        v-model="sidoCode"
-        :options="sidos"
-        @change="gugunList"
+        v-model="dongName"
+        :options="dongs"
+        @change="dongList"
       ></b-form-select>
     </b-col>
   </b-row>
@@ -41,7 +41,7 @@ import { mapState, mapActions, mapMutations } from "vuex";
     키: 값
     memberStore: memberStore,
     houseStore: houseStore
-  }  
+  }
 */
 const houseStore = "houseStore";
 
@@ -49,33 +49,47 @@ export default {
   name: "HouseSearchBar",
   data() {
     return {
-      sidoCode: null,
-      gugunCode: null,
+      sidoName: null,
+      gugunName: null,
+      dongName: null,
     };
   },
   computed: {
-    ...mapState(houseStore, ["sidos", "guguns", "houses"]),
+    ...mapState(houseStore, ["sidos", "guguns", "dongs", "houses"]),
     // sidos() {
     //   return this.$store.state.sidos;
     // },
   },
   created() {
-    // this.$store.dispatch("getSido");
-    // this.sidoList();
     this.CLEAR_SIDO_LIST();
     this.getSido();
   },
   methods: {
-    ...mapActions(houseStore, ["getSido", "getGugun", "getHouseList"]),
-    ...mapMutations(houseStore, ["CLEAR_SIDO_LIST", "CLEAR_GUGUN_LIST"]),
+    ...mapActions(houseStore, [
+      "getSido",
+      "getGugun",
+      "getDong",
+      "getHouseList",
+    ]),
+    ...mapMutations(houseStore, [
+      "CLEAR_SIDO_LIST",
+      "CLEAR_GUGUN_LIST",
+      "CLEAR_DONG_LIST",
+    ]),
     // sidoList() {
     //   this.getSido();
     // },
     gugunList() {
-      console.log(this.sidoCode);
+      console.log(this.sidoName);
       this.CLEAR_GUGUN_LIST();
-      this.gugunCode = null;
-      if (this.sidoCode) this.getGugun(this.sidoCode);
+      this.gugunName = null;
+      if (this.sidoName) this.getGugun(this.sidoName);
+    },
+    dongList() {
+      console.log(this.dongName);
+      this.CLEAR_DONG_LIST();
+      this.dongName = null;
+      if (this.gugunName) this.getSido(this.gugunName);
     },
     searchApt() {
       if (this.gugunCode) this.getHouseList(this.gugunCode);

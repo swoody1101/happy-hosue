@@ -1,10 +1,11 @@
-import { sidoList, gugunList, houseList } from "@/api/house.js";
+import { sidoList, gugunList, dongList, houseList } from "@/api/house.js";
 
 const houseStore = {
   namespaced: true,
   state: {
-    sidos: [{ value: null, text: "선택하세요" }],
-    guguns: [{ value: null, text: "선택하세요" }],
+    sidos: [{ text: "선택하세요" }],
+    guguns: [{ text: "선택하세요" }],
+    dongs: [{ text: "선택하세요" }],
     houses: [],
     house: null,
   },
@@ -14,19 +15,27 @@ const houseStore = {
   mutations: {
     SET_SIDO_LIST: (state, sidos) => {
       sidos.forEach((sido) => {
-        state.sidos.push({ value: sido.sidoCode, text: sido.sidoName });
+        state.sidos.push({ text: sido });
       });
     },
     SET_GUGUN_LIST: (state, guguns) => {
       guguns.forEach((gugun) => {
-        state.guguns.push({ value: gugun.gugunCode, text: gugun.gugunName });
+        state.guguns.push({ text: gugun });
+      });
+    },
+    SET_DONG_LIST: (state, dongs) => {
+      dongs.forEach((dong) => {
+        state.dongs.push({ text: dong });
       });
     },
     CLEAR_SIDO_LIST: (state) => {
-      state.sidos = [{ value: null, text: "선택하세요" }];
+      state.sidos = [{ text: "선택하세요" }];
     },
     CLEAR_GUGUN_LIST: (state) => {
-      state.guguns = [{ value: null, text: "선택하세요" }];
+      state.guguns = [{ text: "선택하세요" }];
+    },
+    CLEAR_DONG_LIST: (state) => {
+      state.dongs = [{ text: "선택하세요" }];
     },
     SET_HOUSE_LIST: (state, houses) => {
       //   console.log(houses);
@@ -41,7 +50,7 @@ const houseStore = {
     getSido: ({ commit }) => {
       sidoList(
         ({ data }) => {
-          // console.log(data);
+          console.log(data);
           commit("SET_SIDO_LIST", data);
         },
         (error) => {
@@ -49,9 +58,9 @@ const houseStore = {
         },
       );
     },
-    getGugun: ({ commit }, sidoCode) => {
+    getGugun: ({ commit }, sidoName) => {
       const params = {
-        sido: sidoCode,
+        sido: sidoName,
       };
       gugunList(
         params,
@@ -64,6 +73,23 @@ const houseStore = {
         },
       );
     },
+    getDong: ({ commit }, sidoName, gugunName) => {
+      const params = {
+        sido: sidoName,
+        gugun: gugunName,
+      };
+      dongList(
+        params,
+        ({ data }) => {
+          // console.log(commit, response);
+          commit("SET_DONG_LIST", data);
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+    },
+
     getHouseList: ({ commit }, gugunCode) => {
       // vue cli enviroment variables 검색
       //.env.local file 생성.

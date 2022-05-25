@@ -1,17 +1,16 @@
 <template>
-  <div>
-    <h2>BoardList</h2>
-    <div><h2>글 목록</h2></div>
+  <div class="tableContainer">
+    <h5 class="title">글 목록(전체 {{ totalCnt }}개)</h5>
     <button @click="moveWrite()">글 쓰기</button>
     <form @submit="searchArticle">
       <input type="text" v-model="keyword" placeholder="검색어를 입력하세요." />
       <button type="submit">검색</button>
     </form>
     <div>
-      <table border="1" width="500px">
+      <table class="articleTb">
         <thead>
           <tr>
-            <th>번호</th>
+            <th>글번호</th>
             <th>제목</th>
             <th>작성자</th>
             <th>작성일</th>
@@ -23,6 +22,7 @@
             v-for="notice in notices"
             :key="'notice' + notice.bno"
             v-bind="notice"
+            class="notice"
           />
           <board-list-item
             v-for="article in articles"
@@ -82,6 +82,9 @@ export default {
     pagesize() {
       return this.endPage - this.startPage + 1;
     },
+    totalCnt() {
+      return this.articles.length;
+    },
   },
   methods: {
     makePage(p) {
@@ -126,4 +129,20 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.articleTb {
+  width: 100%;
+  border-top: 5px solid rgb(228, 228, 228);
+  border-bottom: 5px solid rgb(228, 228, 228);
+}
+
+.notice {
+  background-color: rgba(233, 106, 106, 0.368);
+}
+
+.title {
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
+</style>

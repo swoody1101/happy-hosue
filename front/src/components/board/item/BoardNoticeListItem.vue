@@ -1,9 +1,9 @@
 <template>
   <tr>
     <td>{{ bno }}</td>
-    <router-link :to="{ name: 'boardDetail', params: { articleno: bno } }">{{
-      btitle
-    }}</router-link>
+    <router-link :to="{ name: 'boardDetail', params: { articleno: bno } }"
+      >[공지사항] {{ btitle }}</router-link
+    >
     <td>{{ bwriter }}</td>
     <td>{{ bregtime }}</td>
     <td>{{ breadCount }}</td>

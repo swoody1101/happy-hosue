@@ -10,7 +10,7 @@ import com.ssafy.vue.dto.BoardDto;
 @Mapper
 public interface BoardMapper {
 	
-	List<BoardDto> selectBoardList(@Param("start") int start, @Param("count") int count);
+	List<BoardDto> selectBoardList(@Param("start") int start, @Param("count") int count, @Param("keyword") String keyword);
 	
 	List<BoardDto> selectNotice(@Param("start") int start, @Param("count") int count);
 	

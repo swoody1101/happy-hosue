@@ -33,7 +33,7 @@ export default {
           /* global kakao */
           script.onload = () => kakao.maps.load(this.initMap);
           script.src =
-            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520&libraries=services";
+            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=복사한 Java Script 키 입력";
           document.head.appendChild(script);
         }
       },

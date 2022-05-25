@@ -7,7 +7,7 @@ import com.ssafy.vue.dto.BoardDto;
 
 public interface BoardService {
 	
-	Map<String, Object> selectBoardListByPage(int page);
+	Map<String, Object> selectBoardListByPage(int page, String keyword);
 	
 	List<BoardDto> selectNotice();
 	
@@ -18,5 +18,7 @@ public interface BoardService {
 	boolean modifyBoard(BoardDto board);
 	
 	boolean deleteBoard(int bno);
+	
+	
 
 }

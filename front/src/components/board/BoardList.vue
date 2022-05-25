@@ -2,11 +2,11 @@
   <div>
     <h2>BoardList</h2>
     <div><h2>글 목록</h2></div>
-    <form action="">
-      <input type="text" placeholder="검색어를 입력하세요." />
-      <button>검색</button>
-    </form>
     <button @click="moveWrite()">글 쓰기</button>
+    <form @submit="searchArticle">
+      <input type="text" v-model="keyword" placeholder="검색어를 입력하세요." />
+      <button type="submit">검색</button>
+    </form>
     <div>
       <table border="1" width="500px">
         <thead>
@@ -32,7 +32,11 @@
         </tbody>
       </table>
       <button @click="prePage()">[이전]</button>
-      <button v-for="index in pagesize" :key="index" @click="makePage">
+      <button
+        v-for="index in pagesize"
+        :key="index"
+        @click="makePage(index + startPage - 1)"
+      >
         {{ index + startPage - 1 }}
       </button>
       <button @click="nextPage()">[다음]</button>
@@ -54,6 +58,7 @@ export default {
   },
   data() {
     return {
+      keyword: "",
       page: 1,
       startPage: 1,
       totalPage: 1,
@@ -80,8 +85,10 @@ export default {
   },
   methods: {
     makePage(p) {
+      this.page = p;
       listArticle(
-        p,
+        this.page,
+        this.keyword,
         (response) => {
           // console.log(response.data);
           this.page = response.data.page;
@@ -110,6 +117,10 @@ export default {
       if (this.page < Math.floor((this.endPage * 10) / 10)) {
         this.makePage(Math.floor((this.page + 10) / 10) * 10 + 1);
       }
+    },
+    searchArticle(event) {
+      event.preventDefault();
+      this.makePage(this.page);
     },
   },
 };

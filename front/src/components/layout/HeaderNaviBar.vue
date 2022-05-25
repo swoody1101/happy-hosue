@@ -22,27 +22,15 @@
             ></b-nav-item
           >
           <b-nav-item href="#"
-            ><router-link :to="{ name: 'board' }" class="link"
-              ><b-icon icon="journal" font-scale="1.5"></b-icon>
-              게시판</router-link
-            ></b-nav-item
-          >
-          <b-nav-item href="#"
-            ><router-link :to="{ name: 'instagram' }" class="link"
-              ><b-icon icon="instagram" font-scale="1.5"></b-icon>
-              인별그램</router-link
-            ></b-nav-item
-          >
-          <b-nav-item href="#"
             ><router-link :to="{ name: 'house' }" class="link"
               ><b-icon icon="house-fill" font-scale="1.5"></b-icon>
               아파트정보</router-link
             ></b-nav-item
           >
           <b-nav-item href="#"
-            ><router-link :to="{ name: 'todo' }" class="link"
-              ><b-icon icon="calendar-check" font-scale="1.5"></b-icon>
-              TodoList</router-link
+            ><router-link :to="{ name: 'board' }" class="link"
+              ><b-icon icon="journal" font-scale="1.5"></b-icon>
+              게시판</router-link
             ></b-nav-item
           >
           <b-nav-item href="#"

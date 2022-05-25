@@ -2,8 +2,8 @@ import { apiInstance } from "./index.js";
 
 const api = apiInstance();
 
-function listArticle(page, success, fail) {
-  api.get(`/board/list/${page}`).then(success).catch(fail);
+function listArticle(page, keyword, success, fail) {
+  api.get(`/board/list/${page}/${keyword}`).then(success).catch(fail);
 }
 
 function listNotice(success, fail) {

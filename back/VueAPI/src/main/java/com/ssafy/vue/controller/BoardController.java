@@ -37,10 +37,11 @@ public class BoardController {
 	private BoardService boardService;
 
 	@ApiOperation(value = "게시판 글목록 및 페이지 정보", notes = "페이지 정보 및 해당 페이지 게시글의 정보를 반환한다.", response = Object.class)
-	@GetMapping("/list/{page}")
-	public ResponseEntity<Map<String, Object>> retrieveBoard(@PathVariable int page) {
+	@GetMapping({"/list/{page}/{keyword}", "/list/{page}"})
+	public ResponseEntity<Map<String, Object>> retrieveBoard(@PathVariable int page, @PathVariable(required = false) String keyword) {
+		if(keyword == null) keyword="";
 		logger.debug("retrieveBoard 호출");
-		return new ResponseEntity<Map<String, Object>>(boardService.selectBoardListByPage(page), HttpStatus.OK);
+		return new ResponseEntity<Map<String, Object>>(boardService.selectBoardListByPage(page, keyword), HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "공지사항 글목록", notes = "공지사항 최신순으로 5개 반환한다.", response = List.class)

@@ -10,11 +10,11 @@
         >
           <b-form-input
             id="userid"
-            :disabled="isUserid"
             v-model="qna.writer"
             type="text"
             required
             placeholder="작성자 입력..."
+            disabled
           ></b-form-input>
         </b-form-group>
 
@@ -61,6 +61,9 @@
 
 <script>
 import { apiInstance } from "@/api/index.js";
+import { mapState } from "vuex";
+
+const memberStore = "memberStore";
 const api = apiInstance();
 
 export default {
@@ -88,6 +91,10 @@ export default {
         this.qna = data;
       });
     }
+    this.qna.writer = this.userInfo.userid;
+  },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
     onSubmit(event) {
@@ -98,7 +105,7 @@ export default {
       !this.qna.writer &&
         ((msg = "작성자 입력해주세요"),
         (err = false),
-        this.$refs.userid.focus());
+        this.$refs.writer.focus());
       err &&
         !this.qna.title &&
         ((msg = "제목 입력해주세요"),

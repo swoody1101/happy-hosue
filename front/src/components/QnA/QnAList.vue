@@ -66,7 +66,7 @@ export default {
     };
   },
   created() {
-    this.makePage(1);
+    this.movePage(1);
   },
   computed: {
     pagesize() {
@@ -74,7 +74,7 @@ export default {
     },
   },
   methods: {
-    makePage(p) {
+    movePage(p) {
       api.get(`/qna/list?p=${p}`).then(({ data }) => {
         console.log(data);
         this.qnas = data.qnaList;
@@ -87,19 +87,14 @@ export default {
     moveWrite() {
       this.$router.push({ name: "qnaRegister" });
     },
-    movePage(p) {
-      this.makePage(p);
-    },
     prePage() {
-      if (this.page > 10) {
-        this.makePage(Math.floor((this.page - 10) / 10) * 10 + 1);
-        // console.log(Math.floor((this.page - 10) / 10) * 10 + 1);
+      if (this.page > 1) {
+        this.movePage(this.page - 1);
       }
     },
     nextPage() {
-      if (this.page < Math.floor((this.endPage * 10) / 10)) {
-        this.makePage(Math.floor((this.page + 10) / 10) * 10 + 1);
-        // console.log(Math.floor((this.page + 10) / 10) * 10 + 1);
+      if (this.page < this.endPage) {
+        this.movePage(this.page + 1);
       }
     },
   },

@@ -15,9 +15,14 @@
           size="sm"
           @click="moveModifyArticle"
           class="mr-2"
+          v-if="qna.writer == userInfo.userid"
           >글수정</b-button
         >
-        <b-button variant="outline-danger" size="sm" @click="deleteArticle"
+        <b-button
+          variant="outline-danger"
+          size="sm"
+          @click="deleteArticle"
+          v-if="qna.writer == userInfo.userid || userInfo.role == 'ROLE_ADMIN'"
           >글삭제</b-button
         >
       </b-col>
@@ -43,7 +48,10 @@
 
 <script>
 import { apiInstance } from "@/api/index.js";
+import { mapState } from "vuex";
+
 const api = apiInstance();
+const memberStore = "memberStore";
 
 export default {
   name: "qnaDetail",
@@ -53,6 +61,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(memberStore, ["userInfo"]),
     message() {
       if (this.qna.content) return this.qna.content.split("\n").join("<br>");
       return "";

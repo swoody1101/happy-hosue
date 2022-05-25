@@ -24,7 +24,7 @@
           /><br />
           <label for="pwd-check">PW 확인 : </label>
           <input
-            type="text"
+            type="password"
             id="member-pwd-check"
             v-model="memberpwdcheck"
             required
@@ -101,17 +101,15 @@ export default {
       this.$router.push({ name: "home" });
     },
     registButton() {
-      join(this.member, this.func1, this.func2);
-    },
-    func1() {
-      let msg = "success";
-      alert(msg);
-      //   왜 안가지지
-      this.$router.push({ name: "singin" });
-    },
-    func2(error) {
-      alert("error");
-      console.log(error);
+      join(
+        this.member,
+        () => {
+          this.$router.push({ name: "signIn" });
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
     },
   },
 };

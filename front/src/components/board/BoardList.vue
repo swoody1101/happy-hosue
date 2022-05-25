@@ -31,15 +31,15 @@
           />
         </tbody>
       </table>
-      <button @click="prePage()">[이전]</button>
+      <button @click="prePage()">Previous</button>
       <button
-        v-for="index in pagesize"
+        v-for="index in totalPage"
         :key="index"
-        @click="makePage(index + startPage - 1)"
+        @click="movePage(index + startPage - 1)"
       >
         {{ index + startPage - 1 }}
       </button>
-      <button @click="nextPage()">[다음]</button>
+      <button @click="nextPage()">Next</button>
     </div>
   </div>
 </template>
@@ -79,7 +79,7 @@ export default {
         console.log(error);
       },
     );
-    this.makePage(1);
+    this.movePage(1);
   },
   computed: {
     ...mapState(memberStore, ["loginInfo"]),
@@ -92,7 +92,7 @@ export default {
     },
   },
   methods: {
-    makePage(p) {
+    movePage(p) {
       this.page = p;
       listArticle(
         this.page,
@@ -113,22 +113,19 @@ export default {
     moveWrite() {
       this.$router.push({ name: "boardRegister" });
     },
-    movePage(p) {
-      this.makePage(p);
-    },
     prePage() {
-      if (this.page > 10) {
-        this.makePage(Math.floor((this.page - 10) / 10) * 10 + 1);
+      if (this.page > 1) {
+        this.movePage(this.page - 1);
       }
     },
     nextPage() {
-      if (this.page < Math.floor((this.endPage * 10) / 10)) {
-        this.makePage(Math.floor((this.page + 10) / 10) * 10 + 1);
+      if (this.page < this.endPage) {
+        this.movePage(this.page + 1);
       }
     },
     searchArticle(event) {
       event.preventDefault();
-      this.makePage(this.page);
+      this.movePage(this.page);
     },
   },
 };

@@ -2689,3 +2689,137 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 [2m2022-05-25 09:45:37.037[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m dongList 호출
 [2m2022-05-25 09:46:08.839[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m siguList 호출
 [2m2022-05-25 09:46:29.237[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m gugunCode 호출
+[2m2022-05-25 09:47:11.263[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 09:47:11.295[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 290 ms
+[2m2022-05-25 09:47:11.403[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 09:47:11.438[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 09:47:11.481[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 09:47:35.569[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-05-25 09:47:35.571[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-05-25 09:47:35.572[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m gugunCode 호출
+[2m2022-05-25 09:47:55.968[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m dongList 호출
+[2m2022-05-25 10:14:32.842[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:14:32.874[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 297 ms
+[2m2022-05-25 10:14:32.981[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:14:33.015[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:14:33.066[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:14:35.831[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:14:35.862[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 255 ms
+[2m2022-05-25 10:14:35.967[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:14:36.000[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:14:36.046[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:14:49.013[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:14:49.043[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 264 ms
+[2m2022-05-25 10:14:49.147[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:14:49.180[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:14:49.229[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:15:01.212[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:15:01.243[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 256 ms
+[2m2022-05-25 10:15:01.352[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:15:01.384[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:15:01.391[0;39m [31mERROR[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m [2m:[0;39m Unable to scan documentation context ssafyVueJS
+
+java.lang.TypeNotPresentException: Type TempDealData not present
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(Unknown Source)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Unknown Source)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(Unknown Source)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Unknown Source)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Unknown Source)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(Unknown Source)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Unknown Source)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Unknown Source)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(Unknown Source)
+	at sun.reflect.generics.repository.MethodRepository.getReturnType(Unknown Source)
+	at java.lang.reflect.Method.getGenericReturnType(Unknown Source)
+	at com.fasterxml.classmate.ResolvedTypeWithMembers.resolveMethod(ResolvedTypeWithMembers.java:570)
+	at com.fasterxml.classmate.ResolvedTypeWithMembers.resolveMemberMethods(ResolvedTypeWithMembers.java:388)
+	at com.fasterxml.classmate.ResolvedTypeWithMembers.getMemberMethods(ResolvedTypeWithMembers.java:201)
+	at springfox.documentation.spring.web.readers.operation.HandlerMethodResolver.getMemberMethods(HandlerMethodResolver.java:151)
+	at springfox.documentation.spring.web.readers.operation.HandlerMethodResolver.resolvedMethod(HandlerMethodResolver.java:136)
+	at springfox.documentation.spring.web.readers.operation.HandlerMethodResolver.methodReturnType(HandlerMethodResolver.java:65)
+	at springfox.documentation.spring.web.WebMvcRequestHandler.getReturnType(WebMvcRequestHandler.java:147)
+	at springfox.documentation.spi.service.contexts.RequestMappingContext.getReturnType(RequestMappingContext.java:216)
+	at springfox.documentation.spi.service.contexts.Orderings.qualifiedMethodName(Orderings.java:76)
+	at java.util.Comparator.lambda$comparing$77a9974f$1(Unknown Source)
+	at java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.util.TimSort.sort(Unknown Source)
+	at java.util.Arrays.sort(Unknown Source)
+	at java.util.stream.SortedOps$SizedRefSortingSink.end(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at springfox.documentation.spring.web.scanners.ApiListingScanner.sortedByMethods(ApiListingScanner.java:229)
+	at springfox.documentation.spring.web.scanners.ApiListingScanner.scan(ApiListingScanner.java:152)
+	at springfox.documentation.spring.web.scanners.ApiDocumentationScanner.scan(ApiDocumentationScanner.java:67)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.scanDocumentation(AbstractDocumentationPluginsBootstrapper.java:96)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.lang.Iterable.forEach(Unknown Source)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.ssafy.vue.VueApiApplication.main(VueApiApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ClassNotFoundException: TempDealData
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	... 56 common frames omitted
+
+[2m2022-05-25 10:15:01.395[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:15:06.272[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:15:06.303[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 283 ms
+[2m2022-05-25 10:15:06.407[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:15:06.440[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:15:06.485[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:15:52.343[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:15:52.374[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 287 ms
+[2m2022-05-25 10:15:52.479[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:15:52.512[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:15:52.556[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2022-05-25 10:15:55.600[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-05-25 10:15:55.602[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-05-25 10:17:34.306[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveNotice 호출
+[2m2022-05-25 10:17:34.306[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
+[2m2022-05-25 10:17:36.904[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-25 10:19:52.589[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-25 10:19:53.796[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-25 10:20:19.582[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveNotice 호출
+[2m2022-05-25 10:20:19.582[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
+[2m2022-05-25 10:23:51.965[0;39m [32mDEBUG[0;39m [35m8908[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzNDQxODMxOTQ2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTM0NDU0MzEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImFkbWluIn0.tWutDv2lvv1slx_dqi_ZFUbnWwEs57eUmrF96RoyTO0
+[2m2022-05-25 10:30:31.264[0;39m [32m INFO[0;39m [35m8908[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-05-25 10:30:37.657[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2022-05-25 10:30:37.658[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2022-05-25 10:30:38.577[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-05-25 10:30:38.709[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 1050 ms
+[2m2022-05-25 10:30:39.270[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2022-05-25 10:30:39.394[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-05-25 10:30:43.417[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-05-25 10:30:43.418[0;39m [32m INFO[0;39m [35m6384[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-05-25 10:30:43.441[0;39m [32mDEBUG[0;39m [35m6384[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-25 10:36:24.201[0;39m [32mDEBUG[0;39m [35m6384[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-25 10:36:57.980[0;39m [32mDEBUG[0;39m [35m6384[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-25 10:37:00.006[0;39m [32mDEBUG[0;39m [35m6384[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출

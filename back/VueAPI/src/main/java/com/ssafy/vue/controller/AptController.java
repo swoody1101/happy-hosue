@@ -29,9 +29,23 @@ public class AptController {
 	private AptService aptService;
 
 	@ApiOperation(value = "시구코드 반환", notes = "시구코드를 반환한다.", response = Object.class)
-	@GetMapping("/siguCode")
-	public ResponseEntity<List<String>> siguList() {
-		logger.debug("siguList 호출");
+	@GetMapping("/sigdoCode")
+	public ResponseEntity<List<String>> sidoList() {
+		logger.debug("sidoList 호출");
 		return new ResponseEntity<List<String>>(aptService.siguList(), HttpStatus.OK);
+	}
+
+	@ApiOperation(value = "구군코드 반환", notes = "구군코드를 반환한다.", response = Object.class)
+	@GetMapping("/gugunCode")
+	public ResponseEntity<List<String>> gugunList(String siguName) {
+		logger.debug("gugunCode 호출");
+		return new ResponseEntity<List<String>>(aptService.gugunList(siguName), HttpStatus.OK);
+	}
+
+	@ApiOperation(value = "동코드 반환", notes = "동코드 반환 반환한다.", response = Object.class)
+	@GetMapping("/dongCode")
+	public ResponseEntity<List<String>> dongList(String siguName, String gugunName) {
+		logger.debug("dongList 호출");
+		return new ResponseEntity<List<String>>(aptService.dongList(siguName, gugunName), HttpStatus.OK);
 	}
 }

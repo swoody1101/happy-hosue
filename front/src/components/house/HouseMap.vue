@@ -19,13 +19,11 @@ export default {
     if (!("geolocation" in navigator)) {
       return;
     }
-
     // get position
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         this.latitude = pos.coords.latitude;
         this.longitude = pos.coords.longitude;
-
         if (window.kakao && window.kakao.maps) {
           this.initMap();
         } else {
@@ -56,11 +54,9 @@ export default {
       if (this.markers.length > 0) {
         this.markers.forEach((marker) => marker.setMap(null));
       }
-
       const positions = markerPositions.map(
         (position) => new kakao.maps.LatLng(...position),
       );
-
       if (positions.length > 0) {
         this.markers = positions.map(
           (position) =>
@@ -69,12 +65,10 @@ export default {
               position,
             }),
         );
-
         const bounds = positions.reduce(
           (bounds, latlng) => bounds.extend(latlng),
           new kakao.maps.LatLngBounds(),
         );
-
         this.map.setBounds(bounds);
       }
     },

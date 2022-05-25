@@ -1,11 +1,17 @@
-import { sidoList, gugunList, dongList, houseList } from "@/api/house.js";
+import {
+  sidoList,
+  gugunList,
+  dongList,
+  dealList,
+  houseList,
+} from "@/api/house.js";
 
 const houseStore = {
   namespaced: true,
   state: {
-    sidos: [{ text: "선택하세요" }],
-    guguns: [{ text: "선택하세요" }],
-    dongs: [{ text: "선택하세요" }],
+    sidos: [{ value: null, text: "선택하세요" }],
+    guguns: [{ value: null, text: "선택하세요" }],
+    dongs: [{ value: null, text: "선택하세요" }],
     houses: [],
     house: null,
   },
@@ -14,18 +20,18 @@ const houseStore = {
 
   mutations: {
     SET_SIDO_LIST: (state, sidos) => {
-      sidos.forEach((sido) => {
-        state.sidos.push({ text: sido });
+      sidos.forEach((sidoName) => {
+        state.sidos.push({ value: sidoName, text: sidoName });
       });
     },
     SET_GUGUN_LIST: (state, guguns) => {
-      guguns.forEach((gugun) => {
-        state.guguns.push({ text: gugun });
+      guguns.forEach((gugunName) => {
+        state.guguns.push({ value: gugunName, text: gugunName });
       });
     },
     SET_DONG_LIST: (state, dongs) => {
-      dongs.forEach((dong) => {
-        state.dongs.push({ text: dong });
+      dongs.forEach((dongName) => {
+        state.dongs.push({ value: dongName, text: dongName });
       });
     },
     CLEAR_SIDO_LIST: (state) => {
@@ -60,7 +66,7 @@ const houseStore = {
     },
     getGugun: ({ commit }, sidoName) => {
       const params = {
-        sido: sidoName,
+        siguName: sidoName,
       };
       gugunList(
         params,
@@ -73,16 +79,25 @@ const houseStore = {
         },
       );
     },
-    getDong: ({ commit }, sidoName, gugunName) => {
-      const params = {
-        sido: sidoName,
-        gugun: gugunName,
-      };
+    getDong: ({ commit }, params) => {
+      // console.log(params);
       dongList(
         params,
         ({ data }) => {
           // console.log(commit, response);
           commit("SET_DONG_LIST", data);
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+    },
+    getDealList: ({ commit }, params) => {
+      dealList(
+        params,
+        (data) => {
+          console.log(data);
+          commit("SET_HOUSE_LIST", data);
         },
         (error) => {
           console.log(error);

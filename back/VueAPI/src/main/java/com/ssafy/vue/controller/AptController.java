@@ -71,6 +71,9 @@ public class AptController {
 			String keyword) {
 		logger.debug("dealInfo 호출");
 		String area = aptService.getAreaCode(siguName, gugunName, dongName);
+		if (keyword == null)
+			return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area), HttpStatus.OK);
+
 		return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area, keyword), HttpStatus.OK);
 	}
 }

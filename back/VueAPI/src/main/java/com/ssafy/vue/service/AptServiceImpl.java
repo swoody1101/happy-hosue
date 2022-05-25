@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ssafy.vue.dto.HouseDeal;
+import com.ssafy.vue.dto.HouseInfo;
 import com.ssafy.vue.dto.TempDealData;
 import com.ssafy.vue.mapper.AreaMapper;
 import com.ssafy.vue.mapper.HouseDealMapper;
@@ -63,6 +65,26 @@ public class AptServiceImpl implements AptService {
 	@Override
 	public List<String> getSiguCode() {
 		return areaMapper.getSiguCode();
+	}
+
+	@Override
+	public int insert(HouseDeal house) {
+		return hdMapper.insert(house);
+	}
+
+	@Override
+	public int insert(HouseInfo hi) {
+		return hiMapper.insert(hi);
+	}
+
+	@Override
+	public HouseInfo select(String aptCode) {
+		return hiMapper.select(aptCode);
+	}
+
+	@Override
+	public String selectDong(String dong, String code5) {
+		return areaMapper.selectDong(dong, code5);
 	}
 
 }

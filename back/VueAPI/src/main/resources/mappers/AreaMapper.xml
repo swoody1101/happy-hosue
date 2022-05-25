@@ -3,7 +3,7 @@
 <mapper namespace="com.ssafy.vue.mapper.AreaMapper">
 
 	<insert id="insert" parameterType="com.ssafy.vue.dto.AreaInfo">
-		INSERT INTO area_info
+		INSERT INTO baseaddress
 		(areaCode, siguCode, sidoCode, sidoName, gugunCode, gugunName, dongCode, dongName) 
 		VALUES
 		(#{areaCode}, #{siguCode}, #{sidoCode}, #{sidoName}, #{gugunCode}, #{gugunName}, #{dongCode}, #{dongName}) 
@@ -66,11 +66,11 @@
 		from baseaddress 
 		where sidoName like CONCAT('%', #{si}, '%')
 		and gugunName like CONCAT('%', #{gu}, '%')
-		and dong_name like CONCAT('%', #{dong}, '%')
+		and dongName like CONCAT('%', #{dong}, '%')
 	</select>
 	
 	<select id="getSiguCode" resultType="String">
-		select distinct sigu_code from baseaddress
+		select distinct CONCAT(siguCode, gugunCode) from baseaddress
 	</select>
 
 </mapper>

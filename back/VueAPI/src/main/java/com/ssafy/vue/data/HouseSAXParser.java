@@ -25,14 +25,17 @@ import com.ssafy.vue.service.AptService;
 
 public class HouseSAXParser {
 
-	@Autowired
 	private static AptService aptService;
-	@Autowired
 	private static HouseInfoMapper hid;
-	@Autowired
 	private static AreaMapper aid;
-	@Autowired
 	private static HouseDealMapper hdd;
+
+	public HouseSAXParser(AptService aptService, HouseInfoMapper hid, AreaMapper aid, HouseDealMapper hdd) {
+		this.aptService = aptService;
+		this.hid = hid;
+		this.aid = aid;
+		this.hdd = hdd;
+	}
 
 	public static void main(String[] args) throws IOException {
 		System.out.println(hid);
@@ -40,7 +43,7 @@ public class HouseSAXParser {
 		System.out.println(hdd);
 		System.out.println(aptService);
 		for (int i = 2022; i <= 2022; i++) {
-			for (int j = 1; j <= 3; j++) {
+			for (int j = 4; j <= 4; j++) {
 				String date = i + (j < 10 ? "0" : "") + j;
 				for (String a : aptService.getSiguCode()) {
 					System.out.println(a + " " + date);
@@ -50,7 +53,7 @@ public class HouseSAXParser {
 		}
 	}
 
-	private static void loadData(String LAWD_CD, String DEAL_YMD) throws IOException {
+	public static void loadData(String LAWD_CD, String DEAL_YMD) throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade"); // URL
 		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")

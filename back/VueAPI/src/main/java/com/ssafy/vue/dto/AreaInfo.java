@@ -2,7 +2,6 @@ package com.ssafy.vue.dto;
 
 public class AreaInfo {
 	private String areaCode; // PK, 시군구코드
-	private String siguCode; // 시구코드
 	private String sidoCode; // 시도코드
 	private String sidoName; // 시도이름
 	private String gugunCode; // 구군코드
@@ -16,14 +15,6 @@ public class AreaInfo {
 
 	public void setAreaCode(String areaCode) {
 		this.areaCode = areaCode;
-	}
-
-	public String getSiguCode() {
-		return siguCode;
-	}
-
-	public void setSiguCode(String siguCode) {
-		this.siguCode = siguCode;
 	}
 
 	public String getSidoCode() {
@@ -76,8 +67,7 @@ public class AreaInfo {
 
 	@Override
 	public String toString() {
-		return "AreaInfo [areaCode=" + areaCode + ", siguCode=" + siguCode + ", sidoCode=" + sidoCode + ", sidoName="
-				+ sidoName + ", gugunCode=" + gugunCode + ", gugunName=" + gugunName + ", dongCode=" + dongCode
-				+ ", dongName=" + dongName + "]";
+		return "AreaInfo [areaCode=" + areaCode + ", sidoCode=" + sidoCode + ", sidoName=" + sidoName + ", gugunCode="
+				+ gugunCode + ", gugunName=" + gugunName + ", dongCode=" + dongCode + ", dongName=" + dongName + "]";
 	}
 }

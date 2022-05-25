@@ -145,7 +145,7 @@ export default {
 }
 
 .articleTb tbody tr {
-  border-top: 1.5px solid rgba(197, 197, 197, 0.759);
+  border-top: 1px solid rgba(214, 214, 214, 0.498);
 }
 
 .notice {

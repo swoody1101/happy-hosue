@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import HouseListItem from "@/components/house/HouseListItem.vue";
+import HouseListItem from "@/components/house/item/HouseListItem.vue";
 import { mapState } from "vuex";
 
 const houseStore = "houseStore";

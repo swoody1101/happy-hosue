@@ -71,5 +71,11 @@
 	<select id="getSiguCode" resultType="String">
 		select distinct CONCAT(siguCode, gugunCode) from baseaddress
 	</select>
+	
+	<select id="getAreaName" parameterType="String" resultType="String">
+		SELECT AREANAME
+		FROM BASEADDRESS
+		WHERE AREACODE=#{areaCode}
+	</select>
 
 </mapper>

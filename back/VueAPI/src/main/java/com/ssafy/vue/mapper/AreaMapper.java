@@ -28,4 +28,6 @@ public interface AreaMapper {
 	String getAreaCodeBySiGuDong(String si, String gu, String dong);
 
 	List<String> getSiguCode();
+	
+	String getAreaName(String areaCode);
 }

@@ -33,7 +33,7 @@ export default {
           /* global kakao */
           script.onload = () => kakao.maps.load(this.initMap);
           script.src =
-            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&libraries=services&appkey=a87d5db57c92aadaa129e06365be4520";
+            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520";
           document.head.appendChild(script);
         }
       },
@@ -51,9 +51,6 @@ export default {
       };
       this.map = new kakao.maps.Map(container, options);
       this.displayMarker([[this.latitude, this.longitude]]);
-
-      var geocoder = new kakao.maps.services.Geocoder();
-      console.log(geocoder);
     },
     displayMarker(markerPositions) {
       if (this.markers.length > 0) {

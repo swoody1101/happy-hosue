@@ -1,20 +1,41 @@
 package com.ssafy.vue.dto;
 
 public class TempDealData {
+	private int dealNo;
 	private String aptName;
 	private String address;
 	private String dealDate;
 	private String price;
 	private String area;
 	private String builtYear;
+	private int floor;
 
-	public TempDealData(String aptName, String address, String dealDate, String price, String area, String builtYear) {
+	public TempDealData(int dealNo, String aptName, String address, String dealDate, String price, String area,
+			String builtYear, int floor) {
+		this.dealNo = dealNo;
 		this.aptName = aptName;
 		this.address = address;
 		this.dealDate = dealDate;
 		this.price = price;
 		this.area = area;
 		this.builtYear = builtYear;
+		this.floor = floor;
+	}
+
+	public int getDealNo() {
+		return dealNo;
+	}
+
+	public void setDealNo(int dealNo) {
+		this.dealNo = dealNo;
+	}
+
+	public int getFloor() {
+		return floor;
+	}
+
+	public void setFloor(int floor) {
+		this.floor = floor;
 	}
 
 	public String getAptName() {
@@ -67,8 +88,9 @@ public class TempDealData {
 
 	@Override
 	public String toString() {
-		return "TempDealData [aptName=" + aptName + ", address=" + address + ", dealDate=" + dealDate + ", price="
-				+ price + ", area=" + area + ", builtYear=" + builtYear + "]";
+		return "TempDealData [dealNo=" + dealNo + ", aptName=" + aptName + ", address=" + address + ", dealDate="
+				+ dealDate + ", price=" + price + ", area=" + area + ", builtYear=" + builtYear + ", floor=" + floor
+				+ "]";
 	}
 
 }

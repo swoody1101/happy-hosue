@@ -10,25 +10,27 @@
 		(#{aptCode}, #{price}, #{dealYear}, #{dealMonth}, #{dealDay})
 	</insert>
 	
-	<select id="selectAll" resultType="com.ssafy.vue.dto.TempDealData">
-		SELECT 
-		aptCode, price, dealYear, dealMonth, dealDay 
-		FROM housedeal
-	</select>
+<!-- 	<select id="selectAll" resultType="com.ssafy.vue.dto.TempDealData"> -->
+<!-- 		SELECT  -->
+<!-- 		aptCode, price, dealYear, dealMonth, dealDay  -->
+<!-- 		FROM housedeal -->
+<!-- 	</select> -->
 	
 	<select id="selectAllByArea" resultType="com.ssafy.vue.dto.TempDealData" parameterType="String">
-		SELECT 
-		i.aptName, i.areaCode, i.jibun, 
-		CONCAT(d.dealYear, d.dealMonth, d.dealDay) as dealDate, 
-		d.price, i.area, i.builtYear
-		from houseDeal d natural join houseInfo i 
-		where left(i.areaCode, LENGTH(#{area})) = #{area}
+		SELECT
+		d.dealNo, i.aptName, (select CONCAT(areaName, ' ', i.jibun) from baseaddress where areaCode=i.areaCode) as address,
+		CONCAT(d.dealYear, '/', d.dealMonth, '/', d.dealDay),
+		d.price, i.area, i.builtYear, i.floor
+		from housedeal d natural join houseinfo i
+		where left(i.areaCode, LENGTH(#{area})) = #{area} 
 	</select>
 	
 	<select id="selectAllByKeyword" resultType="com.ssafy.vue.dto.TempDealData" parameterType="String">
-		select 
-		i.aptName, i.areaCode, i.jibun, d.dealYear, d.dealMonth, d.dealDay, d.price, i.area, i.builtYear
-		from housedeal d natural join houseinfo i 
+		SELECT
+		d.dealNo, i.aptName, (select CONCAT(areaName, ' ', i.jibun) from baseaddress where areaCode=i.areaCode) as address,
+		CONCAT(d.dealYear, '/', d.dealMonth, '/', d.dealDay),
+		d.price, i.area, i.builtYear, i.floor
+		from housedeal d natural join houseinfo i
 		where left(i.areaCode, LENGTH(#{area})) = #{area} 
 		and i.aptName like CONCAT('%', #{keyword}, '%')
 	</select>

@@ -2,7 +2,7 @@
   <b-container v-if="house" class="bv-example-row">
     <b-row>
       <b-col
-        ><h3>{{ house.아파트 }}</h3></b-col
+        ><h3>{{ house.aptName }}</h3></b-col
       >
     </b-row>
     <b-row class="mb-2 mt-1">
@@ -13,20 +13,20 @@
     <b-row>
       <b-col>
         <b-alert show variant="secondary"
-          >일련번호 : {{ house.일련번호 }}</b-alert
+          >일련번호 : {{ house.address }}</b-alert
         >
       </b-col>
     </b-row>
     <b-row>
       <b-col>
         <b-alert show variant="primary"
-          >아파트 이름 : {{ house.아파트 }}
+          >아파트 이름 : {{ house.aptName }}
         </b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
-        <b-alert show variant="info">법정동 : {{ house.법정동 }} </b-alert>
+        <b-alert show variant="info">면적 : {{ house.area }} </b-alert>
       </b-col>
     </b-row>
     <b-row>
@@ -36,10 +36,20 @@
     </b-row>
     <b-row>
       <b-col>
+        <b-alert show variant="info">건축일 : {{ house.builtYear }} </b-alert>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-alert show variant="info">거래일 : {{ house.dealDate }} </b-alert>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
         <b-alert show variant="danger"
           >거래금액 :
           {{
-            (parseInt(house.거래금액.replace(",", "")) * 10000) | price
+            (parseInt(house.price.replace(",", "")) * 10000) | price
           }}원</b-alert
         >
       </b-col>
@@ -56,9 +66,6 @@ export default {
   name: "HouseDetail",
   computed: {
     ...mapState(houseStore, ["house"]),
-    // house() {
-    //   return this.$store.state.house;
-    // },
   },
   filters: {
     price(value) {

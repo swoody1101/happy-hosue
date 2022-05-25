@@ -9,33 +9,33 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
-        <house-map></house-map>
-      </b-col>
-    </b-row>
-    <!-- <b-row>
       <b-col cols="6" align="left">
         <house-list />
       </b-col>
       <b-col cols="6">
         <house-detail />
       </b-col>
-    </b-row> -->
+    </b-row>
+    <b-row>
+      <b-col>
+        <house-map></house-map>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 <script>
 import HouseSearchBar from "@/components/house/HouseSearchBar.vue";
 import HouseMap from "@/components/house/HouseMap.vue";
-// import HouseList from "@/components/house/HouseList.vue";
-// import HouseDetail from "@/components/house/HouseDetail.vue";
+import HouseList from "@/components/house/HouseList.vue";
+import HouseDetail from "@/components/house/HouseDetail.vue";
 
 export default {
   name: "HouseView",
   components: {
     HouseSearchBar,
     HouseMap,
-    // HouseList,
-    // HouseDetail,
+    HouseList,
+    HouseDetail,
   },
 };
 </script>

@@ -44,8 +44,8 @@ const houseStore = {
       state.dongs = [{ text: "읍/면/동" }];
     },
     SET_HOUSE_LIST: (state, houses) => {
-      //   console.log(houses);
       state.houses = houses;
+      console.log("house", houses);
     },
     SET_DETAIL_HOUSE: (state, house) => {
       state.house = house;
@@ -95,9 +95,9 @@ const houseStore = {
     getDealList: ({ commit }, params) => {
       dealList(
         params,
-        (data) => {
-          console.log(data);
-          commit("SET_HOUSE_LIST", data);
+        (response) => {
+          // console.log(response.data);
+          commit("SET_HOUSE_LIST", response.data);
         },
         (error) => {
           console.log(error);

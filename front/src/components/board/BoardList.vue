@@ -22,12 +22,13 @@
             v-for="notice in notices"
             :key="'notice' + notice.bno"
             v-bind="notice"
-            class="notice"
+            class="notice article-item"
           />
           <board-list-item
             v-for="article in articles"
             :key="'article' + article.bno"
             v-bind="article"
+            class="article-item"
           />
         </tbody>
       </table>
@@ -138,16 +139,29 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 .articleTb {
   width: 100%;
-  border-top: 5px solid rgb(228, 228, 228);
-  border-bottom: 5px solid rgb(228, 228, 228);
+  border-top: 4px solid rgb(228, 228, 228);
+  border-bottom: 4px solid rgb(228, 228, 228);
+}
+
+.articleTb thead tr th {
+  padding: 15px 20px;
+}
+
+.articleTb tbody tr {
+  border-top: 1.5px solid rgba(197, 197, 197, 0.759);
 }
 
 .notice {
-  background-color: rgba(233, 106, 106, 0.368);
+  background-color: rgba(255, 213, 213, 0.239);
 }
 
 .title {
   text-align: left;
   font-family: "Noto Sans KR", sans-serif;
+}
+
+.article-title {
+  color: black;
+  text-align: left;
 }
 </style>

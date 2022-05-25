@@ -1,9 +1,11 @@
 <template>
   <tr>
     <td>{{ bno }}</td>
-    <router-link :to="{ name: 'boardDetail', params: { articleno: bno } }"
-      >[공지사항] {{ btitle }}</router-link
-    >
+    <td class="article-title">
+      <router-link :to="{ name: 'boardDetail', params: { articleno: bno } }"
+        >[공지사항] {{ btitle }}</router-link
+      >
+    </td>
     <td>{{ bwriter }}</td>
     <td>{{ bregtime }}</td>
     <td>{{ breadCount }}</td>
@@ -32,4 +34,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+td {
+  padding: 15px 20px;
+}
+
+.article-title {
+  text-align: left;
+}
+</style>

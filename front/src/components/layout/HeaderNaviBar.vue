@@ -4,10 +4,11 @@
       <b-navbar-brand href="#">
         <router-link to="/">
           <img
-            src="@/assets/ssafy_logo.png"
+            src="@/assets/logo.png"
             class="d-inline-block align-middle"
-            width="100px"
+            width="130px"
             alt="ssafy"
+            style="margin: 5px"
           />
         </router-link>
       </b-navbar-brand>
@@ -18,24 +19,22 @@
         <b-navbar-nav>
           <b-nav-item href="#"
             ><router-link :to="{ name: 'home' }" class="link"
-              ><b-icon icon="house" font-scale="1.5"></b-icon> 홈</router-link
+              ><b-icon icon="house-fill" font-scale="1.5"></b-icon>
+              홈</router-link
             ></b-nav-item
           >
           <b-nav-item href="#"
-            ><router-link :to="{ name: 'house' }" class="link"
-              ><b-icon icon="house-fill" font-scale="1.5"></b-icon>
+            ><router-link :to="{ name: 'house' }" class="link">
               아파트정보</router-link
             ></b-nav-item
           >
           <b-nav-item href="#"
-            ><router-link :to="{ name: 'board' }" class="link"
-              ><b-icon icon="journal" font-scale="1.5"></b-icon>
-              게시판</router-link
+            ><router-link :to="{ name: 'board' }" class="link">
+              자유게시판</router-link
             ></b-nav-item
           >
           <b-nav-item href="#"
-            ><router-link :to="{ name: 'qna' }" class="link"
-              ><b-icon icon="journal" font-scale="1.5"></b-icon>
+            ><router-link :to="{ name: 'qna' }" class="link">
               QnA</router-link
             ></b-nav-item
           >
@@ -111,6 +110,11 @@ export default {
 
 <style>
 .nav {
-  background-color: rgba(31, 89, 139, 0.241);
+  background-color: rgba(255, 255, 255, 0.241);
+  box-shadow: 5px 1px 10px rgba(114, 114, 114, 0.426);
+}
+
+.link {
+  color: rgba(35, 142, 255, 0.734);
 }
 </style>

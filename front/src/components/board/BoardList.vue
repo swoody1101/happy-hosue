@@ -1,11 +1,18 @@
 <template>
   <div class="tableContainer">
     <h5 class="title">글 목록(전체 {{ totalCnt }}개)</h5>
-    <button @click="moveWrite()">글 쓰기</button>
-    <form @submit="searchArticle">
-      <input type="text" v-model="keyword" placeholder="검색어를 입력하세요." />
-      <button type="submit">검색</button>
-    </form>
+    <div class="search-container">
+      <form @submit="searchArticle">
+        검색:
+        <input
+          type="text"
+          v-model="keyword"
+          placeholder="제목 / 내용 / 작성자명으로 검색하세요."
+          class="search-keyword-box"
+        />
+        <button type="submit" class="search-btn">검색</button>
+      </form>
+    </div>
     <div>
       <table class="articleTb">
         <thead>
@@ -32,15 +39,23 @@
           />
         </tbody>
       </table>
-      <button @click="prePage()">Previous</button>
+      <div class="write-btn-container">
+        <button class="write-btn" @click="moveWrite()">글 쓰기</button>
+      </div>
+      <button @click="prePage()" class="page-change page-btn">
+        이전 페이지
+      </button>
       <button
+        class="page-select page-btn"
         v-for="index in totalPage"
         :key="index"
         @click="movePage(index + startPage - 1)"
       >
         {{ index + startPage - 1 }}
       </button>
-      <button @click="nextPage()">Next</button>
+      <button @click="nextPage()" class="page-change page-btn">
+        다음 페이지
+      </button>
     </div>
   </div>
 </template>
@@ -160,5 +175,49 @@ export default {
 .article-title {
   color: black;
   text-align: left;
+}
+
+.write-btn-container {
+  margin-top: 20px;
+  margin-right: 30px;
+  text-align: right;
+}
+
+.write-btn {
+  padding: 15px 25px;
+  border: none;
+  color: whitesmoke;
+  background-color: rgb(138, 138, 138);
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.search-container {
+  text-align: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.search-keyword-box {
+  border-radius: 3px;
+  border: 0.5px gray solid;
+  padding: 5px 10px;
+  margin-right: 5px;
+  width: 300px;
+}
+.search-btn {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  color: whitesmoke;
+  background-color: rgb(138, 138, 138);
+}
+
+.page-btn {
+  border: 1px rgba(148, 148, 148, 0.545) solid;
+  padding: 5px 10px;
+  background-color: white;
+  margin-bottom: 30px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
 }
 </style>

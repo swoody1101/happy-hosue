@@ -6,73 +6,73 @@
 
 <script>
 export default {
-  name: "test",
-  data() {
-    return {
-      map: null,
-      markers: [],
-      latitude: 0,
-      longitude: 0,
-    };
-  },
-  created() {
-    if (!("geolocation" in navigator)) {
-      return;
-    }
-    // get position
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        this.latitude = pos.coords.latitude;
-        this.longitude = pos.coords.longitude;
-        if (window.kakao && window.kakao.maps) {
-          this.initMap();
-        } else {
-          const script = document.createElement("script");
-          /* global kakao */
-          script.onload = () => kakao.maps.load(this.initMap);
-          script.src =
-            "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520";
-          document.head.appendChild(script);
-        }
-      },
-      (err) => {
-        alert(err.message);
-      },
-    );
-  },
-  methods: {
-    initMap() {
-      const container = document.getElementById("map");
-      const options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 5,
-      };
-      this.map = new kakao.maps.Map(container, options);
-      this.displayMarker([[this.latitude, this.longitude]]);
-    },
-    displayMarker(markerPositions) {
-      if (this.markers.length > 0) {
-        this.markers.forEach((marker) => marker.setMap(null));
-      }
-      const positions = markerPositions.map(
-        (position) => new kakao.maps.LatLng(...position),
-      );
-      if (positions.length > 0) {
-        this.markers = positions.map(
-          (position) =>
-            new kakao.maps.Marker({
-              map: this.map,
-              position,
-            }),
-        );
-        const bounds = positions.reduce(
-          (bounds, latlng) => bounds.extend(latlng),
-          new kakao.maps.LatLngBounds(),
-        );
-        this.map.setBounds(bounds);
-      }
-    },
-  },
+  // name: "test",
+  // data() {
+  //   return {
+  //     map: null,
+  //     markers: [],
+  //     latitude: 0,
+  //     longitude: 0,
+  //   };
+  // },
+  // created() {
+  //   if (!("geolocation" in navigator)) {
+  //     return;
+  //   }
+  //   // get position
+  //   navigator.geolocation.getCurrentPosition(
+  //     (pos) => {
+  //       this.latitude = pos.coords.latitude;
+  //       this.longitude = pos.coords.longitude;
+  //       if (window.kakao && window.kakao.maps) {
+  //         this.initMap();
+  //       } else {
+  //         const script = document.createElement("script");
+  //         /* global kakao */
+  //         script.onload = () => kakao.maps.load(this.initMap);
+  //         script.src =
+  //           "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=a87d5db57c92aadaa129e06365be4520";
+  //         document.head.appendChild(script);
+  //       }
+  //     },
+  //     (err) => {
+  //       alert(err.message);
+  //     },
+  //   );
+  // },
+  // methods: {
+  //   initMap() {
+  //     const container = document.getElementById("map");
+  //     const options = {
+  //       center: new kakao.maps.LatLng(33.450701, 126.570667),
+  //       level: 5,
+  //     };
+  //     this.map = new kakao.maps.Map(container, options);
+  //     this.displayMarker([[this.latitude, this.longitude]]);
+  //   },
+  //   displayMarker(markerPositions) {
+  //     if (this.markers.length > 0) {
+  //       this.markers.forEach((marker) => marker.setMap(null));
+  //     }
+  //     const positions = markerPositions.map(
+  //       (position) => new kakao.maps.LatLng(...position),
+  //     );
+  //     if (positions.length > 0) {
+  //       this.markers = positions.map(
+  //         (position) =>
+  //           new kakao.maps.Marker({
+  //             map: this.map,
+  //             position,
+  //           }),
+  //       );
+  //       const bounds = positions.reduce(
+  //         (bounds, latlng) => bounds.extend(latlng),
+  //         new kakao.maps.LatLngBounds(),
+  //       );
+  //       this.map.setBounds(bounds);
+  //     }
+  //   },
+  // },
 };
 </script>
 

@@ -17,7 +17,7 @@ public class BoardServiceImpl implements BoardService{
 	private BoardMapper boardMapper;
 	
 	@Override
-	public Map<String, Object> selectBoardListByPage(int page) {
+	public Map<String, Object> selectBoardListByPage(int page, String keyword) {
 		Map<String, Object> boardMap = new HashMap<String, Object>();
 		boardMap.put("page", page);
 		
@@ -35,7 +35,7 @@ public class BoardServiceImpl implements BoardService{
 		if(endPage > totalPage) endPage = totalPage;
 		boardMap.put("endPage", endPage);
 		
-		List<BoardDto> boardList = boardMapper.selectBoardList((page - 1) * count, count);
+		List<BoardDto> boardList = boardMapper.selectBoardList((page - 1) * count, count, keyword);
 		boardMap.put("boardList", boardList);
 		
 		return boardMap;

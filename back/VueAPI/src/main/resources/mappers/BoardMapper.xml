@@ -3,10 +3,15 @@
 <mapper namespace="com.ssafy.vue.mapper.BoardMapper">
 	
 	<select id="selectBoardList" resultType="BoardDto">
-		SELECT * FROM board 
+		SELECT * FROM board
+		WHERE 
+		(btitle LIKE CONCAT('%', #{keyword}, '%')) 
+		OR
+		(bcontent LIKE CONCAT('%', #{keyword}, '%'))
 		ORDER BY bno DESC 
 		LIMIT #{start}, #{count};
 	</select>
+	
 	
 	<select id="selectNotice" resultType="BoardDto">
 		SELECT * FROM board 

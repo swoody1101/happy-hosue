@@ -35,13 +35,13 @@ const houseStore = {
       });
     },
     CLEAR_SIDO_LIST: (state) => {
-      state.sidos = [{ text: "선택하세요" }];
+      state.sidos = [{ text: "시/도" }];
     },
     CLEAR_GUGUN_LIST: (state) => {
-      state.guguns = [{ text: "선택하세요" }];
+      state.guguns = [{ text: "시/군/구" }];
     },
     CLEAR_DONG_LIST: (state) => {
-      state.dongs = [{ text: "선택하세요" }];
+      state.dongs = [{ text: "읍/면/동" }];
     },
     SET_HOUSE_LIST: (state, houses) => {
       //   console.log(houses);

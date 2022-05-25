@@ -26,7 +26,6 @@
 	<select id="siguList" resultType="String">
 		SELECT distinct sidoName 
 		FROM baseaddress 
-		order by 1
 	</select>
 	
 	<select id="gugunList" resultType="String" parameterType="String">

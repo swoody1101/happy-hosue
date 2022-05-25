@@ -45,10 +45,13 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { listArticle, listNotice } from "@/api/board";
 
 import BoardListItem from "@/components/board/item/BoardListItem.vue";
 import BoardNoticeListItem from "@/components/board/item/BoardNoticeListItem.vue";
+
+const memberStore = "memberStore";
 
 export default {
   name: "BoardList",
@@ -79,6 +82,8 @@ export default {
     this.makePage(1);
   },
   computed: {
+    ...mapState(memberStore, ["loginInfo"]),
+
     pagesize() {
       return this.endPage - this.startPage + 1;
     },

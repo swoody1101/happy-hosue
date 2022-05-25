@@ -41,6 +41,12 @@
 		WHERE bno = #{bno}
 	</update>
 	
+	<update id="modifyReadCount" parameterType="int">
+		UPDATE board
+		SET breadCount = breadCount + 1
+		WHERE bno = #{bno}
+	</update>
+	
 	<delete id="deleteBoard">
 		DELETE FROM board
 		WHERE bno = #{bno}

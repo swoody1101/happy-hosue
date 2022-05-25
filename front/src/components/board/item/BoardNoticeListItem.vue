@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td>{{ bno }}</td>
+    <td>[공지]</td>
     <router-link :to="{ name: 'boardDetail', params: { articleno: bno } }">{{
       btitle
     }}</router-link>

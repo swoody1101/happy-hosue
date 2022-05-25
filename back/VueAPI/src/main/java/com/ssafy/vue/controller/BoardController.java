@@ -77,6 +77,16 @@ public class BoardController {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
+	
+	@ApiOperation(value = "게시판 조회수 수정", notes = "글번호에 해당하는 게시글의 조회수를 수정한다. 그리고 DB수정 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
+	@ResponseBody
+	@PutMapping("/readcount/{bno}")
+	ResponseEntity<String> modifyReadCount(@PathVariable int bno) {
+		logger.debug("modifyBoard 호출");
+		if (boardService.modifyReadCount(bno))
+			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+	}
 
 	@ApiOperation(value = "게시판 글삭제", notes = "글번호에 해당하는 게시글의 정보를 삭제한다. 그리고 DB삭제 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@ResponseBody

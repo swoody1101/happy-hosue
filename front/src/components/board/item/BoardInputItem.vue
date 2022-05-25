@@ -17,7 +17,7 @@
         <input type="text" id="title" v-model="article.btitle" required />
       </div>
 
-      <div>
+      <div v-if="userInfo.role == 'ROLE_ADMIN'">
         <input type="checkbox" v-model="article.bnotice" checked />공지사항
       </div>
 
@@ -57,6 +57,7 @@ export default {
   name: "BoardInputItem",
   data() {
     return {
+      // admin: false,
       article: {
         bno: 1,
         btitle: "",
@@ -155,6 +156,13 @@ export default {
     moveList() {
       this.$router.push({ name: "boardList" });
     },
+    // confirmRule() {
+    //   if (this.userInfo.role == "ROLE_ADMIN") {
+    //     this.admin = true;
+    //   } else {
+    //     this.admin = false;
+    //   }
+    // },
   },
 };
 </script>

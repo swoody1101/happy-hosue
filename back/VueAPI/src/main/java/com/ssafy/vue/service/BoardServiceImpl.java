@@ -61,6 +61,11 @@ public class BoardServiceImpl implements BoardService{
 	public boolean modifyBoard(BoardDto board) {
 		return (boardMapper.modifyBoard(board) == 1);
 	}
+	
+	@Override
+	public boolean modifyReadCount(int bno) {
+		return (boardMapper.modifyReadCount(bno) == 1);
+	}
 
 	@Override
 	public boolean deleteBoard(int bno) {

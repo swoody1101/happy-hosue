@@ -22,6 +22,8 @@ public interface BoardMapper {
 
 	int modifyBoard(BoardDto board);
 	
+	int modifyReadCount(int bno);
+	
 	int deleteBoard(int bno);
 	
 }

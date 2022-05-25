@@ -17,6 +17,8 @@ public interface BoardService {
 
 	boolean modifyBoard(BoardDto board);
 	
+	boolean modifyReadCount(int bno);
+	
 	boolean deleteBoard(int bno);
 	
 	

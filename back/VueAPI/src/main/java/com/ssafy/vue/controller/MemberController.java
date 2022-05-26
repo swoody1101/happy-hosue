@@ -55,10 +55,10 @@ public class MemberController {
 
 	@ApiOperation(value = "회원정보 수정", response = List.class)
 	@PutMapping("/modify")
-	public String modify(@RequestBody MemberDto member) {
+	public MemberDto modify(@RequestBody MemberDto member) {
 		member.setRole("ROLE_USER");
 		memberService.update(member);
-		return "회원정보 수정 완료";
+		return member;
 	}
 
 	@ApiOperation(value = "회원 탈퇴")

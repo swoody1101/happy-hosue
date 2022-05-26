@@ -11,7 +11,7 @@ public interface AreaMapper {
 
 	int insert(AreaInfo area);
 
-	String selectDong(String dong, String code5);
+	String selectDong(String dongName, String siguCode);
 
 	List<AreaInfo> selectAll();
 

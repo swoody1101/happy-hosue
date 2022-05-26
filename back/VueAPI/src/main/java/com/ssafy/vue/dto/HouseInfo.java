@@ -6,23 +6,16 @@ public class HouseInfo {
 	private String areaCode; // 시군구코드
 	private String jibun; // 지번
 	private int builtYear; // 건축년도
-	private double lat; // 경도
-	private double lng; // 위도
-	private double area; // 면적
+	private double area; // 전용면적
 	private int floor; // 층수
 
-	public HouseInfo() {
-	}
-
-	public HouseInfo(String aptCode, String aptName, String areaCode, String jibun, int builtYear, double lat,
-			double lng, double area, int floor) {
+	public HouseInfo(String aptCode, String aptName, String areaCode, String jibun, int builtYear, double area,
+			int floor) {
 		this.aptCode = aptCode;
 		this.aptName = aptName;
 		this.areaCode = areaCode;
 		this.jibun = jibun;
 		this.builtYear = builtYear;
-		this.lat = lat;
-		this.lng = lng;
 		this.area = area;
 		this.floor = floor;
 	}
@@ -67,22 +60,6 @@ public class HouseInfo {
 		this.builtYear = builtYear;
 	}
 
-	public double getLat() {
-		return lat;
-	}
-
-	public void setLat(double lat) {
-		this.lat = lat;
-	}
-
-	public double getLng() {
-		return lng;
-	}
-
-	public void setLng(double lng) {
-		this.lng = lng;
-	}
-
 	public double getArea() {
 		return area;
 	}
@@ -101,9 +78,9 @@ public class HouseInfo {
 
 	@Override
 	public String toString() {
-		return "HouseInfo [aptCode=" + aptCode + ", aptName=" + aptName + ", areaCode=" + areaCode + ", jibun=" + jibun
-				+ ", builtYear=" + builtYear + ", lat=" + lat + ", lng=" + lng + ", area=" + area + ", floor=" + floor
-				+ "]";
+		return "HouseInfo{" + "aptCode='" + aptCode + '\'' + ", aptName='" + aptName + '\'' + ", areaCode='" + areaCode
+				+ '\'' + ", jibun='" + jibun + '\'' + ", builtYear=" + builtYear + ", area=" + area + ", floor=" + floor
+				+ '}';
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.ssafy.vue.data;
+package com.ssafy.vue.controller;
 
 import java.util.ArrayList;
 import java.util.List;

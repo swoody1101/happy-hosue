@@ -58,6 +58,7 @@ export default {
     api.get(`/qna/detail/${this.$route.params.qna_no}`).then(({ data }) => {
       console.log("data", data);
       this.qna = data;
+      this.qna.writer = "admin";
       this.qna.content = null;
     });
   },

@@ -39,7 +39,7 @@
           </b-container>
           <hr class="my-4" />
 
-          <b-button variant="primary" href="#" class="mr-1"
+          <b-button variant="primary" class="mr-1" @click="moveModifyPage"
             >회원정보 수정</b-button
           >
           <b-button variant="danger" @click="secession">회원탈퇴</b-button>
@@ -97,6 +97,9 @@ export default {
       this.SET_USER_INFO(null);
       sessionStorage.removeItem("access-token");
       //   if (this.$route.path != "/") this.$router.push({ name: "home" });
+    },
+    moveModifyPage() {
+      this.$router.push({ name: "memberModify" });
     },
   },
 };

@@ -51,6 +51,13 @@ async function newPwd(memberEmail, emailAddress, success, fail) {
     .catch(fail);
 }
 
+async function userModify(member, success, fail) {
+  await api
+    .put(`/user/modify`, JSON.stringify(member))
+    .then(success)
+    .catch(fail);
+}
+
 export {
   login,
   findById,
@@ -60,4 +67,5 @@ export {
   secession,
   newPwd,
   getEmail,
+  userModify,
 };

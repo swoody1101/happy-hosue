@@ -2,7 +2,7 @@
   <b-container class="bv-example-row mt-3 container">
     <b-row>
       <b-col>
-        <b-alert variant="secondary" show><h3>회원가입</h3></b-alert>
+        <b-alert variant="secondary" show><h3>회원정보 수정</h3></b-alert>
         <div class="regist-container">
           <form @submit="registButton" class="regist-form">
             <b-form-group>
@@ -14,16 +14,8 @@
                 required
                 placeholder="아이디를 입력하세요"
                 class="input"
-                @input="idchange"
                 disabled
               />
-              <b-button @click="formIdCheck">중복체크</b-button>
-              <span v-if="idcheck" style="color: green; font-size: small"
-                >사용 가능한 ID</span
-              >
-              <span v-if="idcheckfalse" style="color: red; font-size: small"
-                >이미 존재하는 아이디입니다!!</span
-              >
             </b-form-group>
             <b-form-group>
               PW:
@@ -81,6 +73,7 @@
                 placeholder="아이디"
                 class="email"
                 aria-required="true"
+                @input="emailChange"
               />
 
               @
@@ -92,10 +85,11 @@
                 placeholder="naver.com"
                 class="email"
                 aria-required="true"
+                @input="emailChange"
               />
               <b-button @click="emailConfirmBtn">인증코드 전송</b-button>
             </b-form-group>
-            <b-form-group>
+            <b-form-group v-if="!emailcheck">
               인증코드:
               <b-form-input
                 type="text"
@@ -113,7 +107,7 @@
             </b-form-group>
 
             <b-button type="submit" class="regist-btn" variant="success"
-              >가입완료</b-button
+              >수정완료</b-button
             >
           </form>
         </div>
@@ -124,26 +118,24 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import { join, idCheck, sendEmailCode } from "@/api/member.js";
+import { userModify, sendEmailCode } from "@/api/member.js";
 const memberStore = "memberStore";
 
 export default {
-  name: "MemberRegister",
+  name: "MemberModify",
   data() {
     return {
-      idcheck: false,
-      idcheckfalse: false,
       memberpwdcheck: null,
       memberemailcheck: null,
-      emailcheck: false,
+      emailcheck: true,
       emailConfirmCode: null,
-      emailId: null,
-      emailAddress: null,
+      emailId: this.$store.state.memberStore.userInfo.email.split("@")[0],
+      emailAddress: this.$store.state.memberStore.userInfo.email.split("@")[1],
       member: {
-        userid: null,
+        userid: this.$store.state.memberStore.userInfo.userid,
         userpwd: null,
-        username: null,
-        email: null,
+        username: this.$store.state.memberStore.userInfo.username,
+        email: this.$store.state.memberStore.userInfo.email,
       },
     };
   },
@@ -163,28 +155,8 @@ export default {
     moveHomePage() {
       this.$router.push({ name: "home" });
     },
-    formIdCheck() {
-      console.log(this.member.userid);
-      idCheck(
-        this.member.userid,
-        (data) => {
-          console.log("ID체크완료");
-          if (data.data) {
-            this.idcheck = true;
-            this.idcheckfalse = false;
-          } else {
-            this.idcheck = false;
-            this.idcheckfalse = true;
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
-    },
-    idchange() {
-      this.idcheck = false;
-      this.idcheckfalse = false;
+    emailChange() {
+      this.emailcheck = false;
     },
     emailConfirmBtn() {
       sendEmailCode(
@@ -206,18 +178,16 @@ export default {
     registButton(event) {
       event.preventDefault();
 
-      if (!this.idcheck) {
-        alert("ID 중복체크를 완료해주세요");
-      } else if (!this.memberpwdcheck) {
+      if (!this.memberpwdcheck) {
         alert("비밀번호를 확인해주세요");
       } else if (!this.emailcheck) {
         alert("이메일 인증을 완료해주세요");
       } else {
         this.member.email = this.emailId + "@" + this.emailAddress;
-        join(
+        userModify(
           this.member,
           () => {
-            this.$router.push({ name: "signIn" });
+            this.$router.push({ name: "mypage" });
           },
           (error) => {
             console.log(error);

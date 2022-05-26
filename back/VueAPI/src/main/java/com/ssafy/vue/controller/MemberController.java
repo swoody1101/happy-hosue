@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ssafy.vue.dto.MemberDto;
 import com.ssafy.vue.service.JwtServiceImpl;
 import com.ssafy.vue.service.MemberService;
@@ -53,12 +53,13 @@ public class MemberController {
 		return "회원가입 완료";
 	}
 
-//	@ApiOperation(value = "회원 탈퇴")
-//	@DeleteMapping("/secession")
-//	public void secession(@RequestBody MemberDto user) {
-//		System.out.println("id: " + user.getUserid() + ", userpwd: " + user.getUserpwd());
-//		memberService.delete(user.getUserid(), user.getUserpwd());
-//	}
+	@ApiOperation(value = "회원정보 수정", response = List.class)
+	@PutMapping("/modify")
+	public String modify(@RequestBody MemberDto member) {
+		member.setRole("ROLE_USER");
+		memberService.update(member);
+		return "회원정보 수정 완료";
+	}
 
 	@ApiOperation(value = "회원 탈퇴")
 	@DeleteMapping("/secession")

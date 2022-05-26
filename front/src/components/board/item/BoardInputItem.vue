@@ -1,48 +1,71 @@
 <template>
   <div>
-    <h3>게시물 등록</h3>
-    <form @submit="onSubmit" @reset="onReset">
-      <div class="">
-        <label for="writer">작성자</label>
-        <input
-          type="text"
-          id="writer"
-          v-model="article.bwriter"
-          required
-          disabled
-        />
-      </div>
-      <div class="">
-        <label for="title">제목</label>
-        <input type="text" id="title" v-model="article.btitle" required />
-      </div>
+    <h2 class="title">게시글 작성</h2>
 
-      <div v-if="userInfo.role == 'ROLE_ADMIN'">
+    <form @submit="onSubmit" @reset="onReset">
+      <div v-if="userInfo.role == 'ROLE_ADMIN'" class="notice-check">
         <input type="checkbox" v-model="article.bnotice" checked />공지사항
       </div>
+      <table class="write-table">
+        <tr>
+          <td class="write-label">
+            <label for="writer">작성자</label>
+          </td>
+          <td class="write-input">
+            <input
+              type="text"
+              id="writer"
+              v-model="article.bwriter"
+              required
+              disabled
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="write-label">
+            <label for="title">제목</label>
+          </td>
+          <td class="write-input">
+            <input
+              type="text"
+              id="title"
+              v-model="article.btitle"
+              required
+              placeholder="제목 입력"
+            />
+          </td>
+        </tr>
 
-      <div class="">
-        <textarea
-          name=""
-          id="content"
-          cols="50"
-          rows="10"
-          max-rows="15"
-          v-model="article.bcontent"
-          placeholder="내용 입력"
-        ></textarea>
-      </div>
+        <tr>
+          <td></td>
+          <td class="write-input">
+            <textarea
+              name=""
+              id="content"
+              cols="50"
+              rows="10"
+              max-rows="15"
+              v-model="article.bcontent"
+              placeholder="내용 입력"
+            ></textarea>
+          </td>
+        </tr>
+      </table>
 
       <button
         type="submit"
         variant="primary"
-        class="m-1"
+        class="m-1 write-btn"
         v-if="this.type === 'register'"
       >
         글작성
       </button>
-      <button type="submit" variant="primary" class="m-1" v-else>글수정</button>
-      <button type="reset" variant="danger" class="m-1">초기화</button>
+      <button type="submit" variant="primary" class="m-1 write-btn" v-else>
+        글수정
+      </button>
+      <button type="reset" variant="danger" class="m-1 clear-btn">
+        초기화
+      </button>
     </form>
   </div>
 </template>
@@ -156,15 +179,78 @@ export default {
     moveList() {
       this.$router.push({ name: "boardList" });
     },
-    // confirmRule() {
-    //   if (this.userInfo.role == "ROLE_ADMIN") {
-    //     this.admin = true;
-    //   } else {
-    //     this.admin = false;
-    //   }
-    // },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+label {
+  font-weight: bold;
+}
+
+td {
+  padding: 5px;
+}
+
+input,
+textarea {
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.title {
+  margin-left: 50px;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.write-table {
+  width: 100%;
+}
+
+.write-table tr {
+  width: 100%;
+}
+
+.write-label {
+  width: 10%;
+}
+
+.write-input {
+  width: 90%;
+}
+
+.write-input {
+  text-align: left;
+}
+.write-input input,
+.write-input textarea {
+  width: 80%;
+}
+
+.notice-check {
+  margin-top: 20px;
+  padding-left: 120px;
+  text-align: left;
+}
+
+.write-btn {
+  padding: 15px 25px;
+  border: none;
+  color: whitesmoke;
+  background-color: rgb(138, 138, 138);
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.clear-btn {
+  padding: 13px 23px;
+  border: 1px solid rgb(138, 138, 138);
+  color: rgb(138, 138, 138);
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+</style>

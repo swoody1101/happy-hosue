@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,6 +51,19 @@ public class MemberController {
 		member.setRole("ROLE_USER");
 		memberService.insert(member);
 		return "회원가입 완료";
+	}
+
+	@ApiOperation(value = "회원 탈퇴")
+	@DeleteMapping("/secession")
+	public void secession(@RequestBody MemberDto user) {
+		System.out.println("id: " + user.getUserid() + ", userpwd: " + user.getUserpwd());
+		memberService.delete(user.getUserid(), user.getUserpwd());
+	}
+
+	@ApiOperation(value = "ID 중복체크", response = Boolean.class)
+	@PostMapping("/idCheck")
+	public boolean idCheck(@RequestBody String userid) {
+		return memberService.idCheck(userid);
 	}
 
 	@ApiOperation(value = "로그인", notes = "Access-token과 로그인 결과 메세지를 반환한다.", response = Map.class)

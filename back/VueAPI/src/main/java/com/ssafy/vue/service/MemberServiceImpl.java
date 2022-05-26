@@ -54,4 +54,9 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.delete(userid, userpwd) == 1;
 	}
 
+	@Override
+	public boolean idCheck(String userid) {
+		return memberMapper.idCheck(userid.substring(1, userid.length()-1)) == null;
+	}
+
 }

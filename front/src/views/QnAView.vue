@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>QnA게시판</h2>
+    <h3 class="title">
+      <b-icon icon="patch-question-fill"></b-icon> Q&A 게시판
+    </h3>
 
     <router-view></router-view>
   </div>
@@ -14,4 +16,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+.title {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 50px;
+  text-align: left;
+  margin: 40px;
+}
+</style>

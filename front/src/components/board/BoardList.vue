@@ -168,6 +168,7 @@ export default {
 }
 
 .title {
+  margin-left: 20px;
   text-align: left;
   font-family: "Noto Sans KR", sans-serif;
 }

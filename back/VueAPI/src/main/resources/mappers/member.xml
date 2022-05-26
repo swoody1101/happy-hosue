@@ -53,4 +53,9 @@
 		WHERE userid = #{userid}
 	</delete>
 	
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT USERID
+		FROM MEMBER
+		WHERE USERID=#{userid}
+	</select>
 </mapper>

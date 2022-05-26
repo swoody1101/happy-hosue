@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row mt-3 text-center">
-    <h3 class="underline-steelblue">
-      <b-icon icon="person-lines-fill"></b-icon> Member Service
+    <h3 class="title">
+      <b-icon icon="person-lines-fill"></b-icon> 회원 페이지
     </h3>
     <router-view></router-view>
   </b-container>
@@ -14,12 +14,12 @@ export default {
 </script>
 
 <style scoped>
-.underline-steelblue {
-  display: inline-block;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(72, 190, 233, 0.3) 30%
-  );
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+.title {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 50px;
+  text-align: left;
+  margin: 40px;
 }
 </style>

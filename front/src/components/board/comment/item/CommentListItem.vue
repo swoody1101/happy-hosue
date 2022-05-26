@@ -1,19 +1,20 @@
 <template>
   <tbody>
     <tr>
-      <td>{{ cwriter }}</td>
+      <th>{{ cwriter }}</th>
       <td>{{ ccontent }}</td>
       <td>{{ cregtime }}</td>
       <td>
-        <button @click="commentForm">답글작성</button>
+        <button @click="commentForm" class="btn">답글작성</button>
       </td>
       <td>
-        <button v-if="cwriter == userInfo.userid">수정</button>
+        <button v-if="cwriter == userInfo.userid" class="btn">수정</button>
       </td>
       <td>
         <button
           @click="deleteComment"
           v-if="cwriter == userInfo.userid || userInfo.role == 'ROLE_ADMIN'"
+          class="btn"
         >
           삭제
         </button>
@@ -102,4 +103,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

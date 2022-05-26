@@ -36,19 +36,13 @@
               ><b-col cols="4" align-self="start">{{ userInfo.email }}</b-col>
               <b-col cols="2"></b-col>
             </b-row>
-            <b-row>
-              <b-col cols="2"></b-col>
-              <b-col cols="2" align-self="end">가입일</b-col
-              ><b-col cols="4" align-self="start">{{
-                userInfo.joindate
-              }}</b-col>
-              <b-col cols="2"></b-col>
-            </b-row>
           </b-container>
           <hr class="my-4" />
 
-          <b-button variant="primary" href="#" class="mr-1">정보수정</b-button>
-          <b-button variant="danger" href="#">회원탈퇴</b-button>
+          <b-button variant="primary" href="#" class="mr-1"
+            >비밀번호 찾기</b-button
+          >
+          <b-button variant="danger" @click="secession">회원탈퇴</b-button>
         </b-jumbotron>
       </b-col>
       <b-col></b-col>
@@ -58,23 +52,39 @@
 
 <script>
 import { mapState } from "vuex";
+import { secession } from "@/api/member.js";
 
 const memberStore = "memberStore";
 
 export default {
   name: "MemberMyPage",
+  data() {
+    return {
+      user: {
+        userid: null,
+        userpwd: null,
+      },
+    };
+  },
   components: {},
   computed: {
     ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
-    async delete() {
-      await this.userConfirm(this.user);
-      let token = sessionStorage.getItem("access-token");
-      if (this.isLogin) {
-        await this.getUserInfo(token);
-        this.$router.push({ name: "home" });
-      }
+    secession() {
+      let pw = prompt("정말로 삭제하시려면 비밀번호를 입력해주세요");
+      this.user.userid = this.$store.state.memberStore.userInfo.userid;
+      this.user.userpwd = pw;
+      console.log(this.user);
+      secession(
+        this.user,
+        () => {
+          console.log("delete");
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
     },
   },
 };

@@ -25,4 +25,6 @@ public interface MemberMapper {
 
 	int delete(String userid, String userpwd);
 
+	public String idCheck(String userid);
+
 }

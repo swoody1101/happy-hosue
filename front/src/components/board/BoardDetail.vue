@@ -1,10 +1,33 @@
 <template>
   <div>
-    <h3>게시물 상세 페이지</h3>
-    <div>
+    <h3 class="title">게시글 작성</h3>
+    <table class="article-table">
+      <tr>
+        <th class="td-title">글번호</th>
+        <td>{{ article.bno }}</td>
+        <th class="td-title">작성자</th>
+        <td>{{ article.bwriter }}</td>
+        <th class="td-title">작성일</th>
+        <td>{{ article.bregtime }}</td>
+        <th class="td-title">조회</th>
+        <td>{{ article.breadCount + 1 }}</td>
+      </tr>
+      <tr class="article-title-container">
+        <th class="td-title">제목</th>
+        <td colspan="7">{{ article.btitle }}</td>
+      </tr>
+      <tr>
+        <td colspan="8" class="article-content">
+          {{ article.bcontent }}
+        </td>
+      </tr>
+    </table>
+
+    <div class="btn-container">
       <button
         @click="moveModifyArticle"
         v-if="article.bwriter == userInfo.userid"
+        class="write-btn"
       >
         수정
       </button>
@@ -13,19 +36,10 @@
         v-if="
           article.bwriter == userInfo.userid || userInfo.role == 'ROLE_ADMIN'
         "
+        class="clear-btn"
       >
         삭제
       </button>
-    </div>
-    <div>
-      <ul>
-        <li>번호 : {{ article.bno }}</li>
-        <li>제목 : {{ article.btitle }}</li>
-        <li>작성자 : {{ article.bwriter }}</li>
-        <li>내용 : {{ article.bcontent }}</li>
-        <li>작성일 : {{ article.bregtime }}</li>
-        <li>조회: {{ article.breadCount + 1 }}</li>
-      </ul>
     </div>
 
     <comment-list :bno="bno"></comment-list>
@@ -97,4 +111,65 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.td-title {
+  background-color: rgb(244, 244, 244);
+  font-weight: bold;
+  color: rgb(84, 84, 84);
+}
+
+.title {
+  margin-left: 50px;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.article-table td {
+  padding: 5px;
+}
+
+.article-table {
+  width: 100%;
+  border: 2px solid rgb(182, 182, 182);
+  border-radius: 5px;
+  /* border-bottom: 3px solid rgb(149, 149, 149); */
+}
+
+.article-table tr {
+  border-top: 1px solid rgba(214, 214, 214, 0.498);
+}
+
+.article-content {
+  height: 300px;
+  border-top: 1px solid rgba(64, 64, 64, 0.498);
+  text-align: left;
+}
+
+.article-title-container td {
+  text-align: left;
+}
+
+.write-btn {
+  padding: 15px 25px;
+  border: none;
+  color: whitesmoke;
+  background-color: rgb(165, 165, 165);
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.clear-btn {
+  padding: 13px 23px;
+  border: 1px solid rgb(138, 138, 138);
+  color: rgb(138, 138, 138);
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.btn-container {
+  margin: 10px 0;
+}
+</style>

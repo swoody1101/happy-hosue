@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>글작성</h2>
     <board-input-item type="register" />
   </div>
 </template>
@@ -15,4 +14,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+.title {
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
+</style>

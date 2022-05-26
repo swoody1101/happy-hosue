@@ -1,17 +1,24 @@
 <template>
   <div>
+    <h3 class="title">댓글 작성</h3>
     <form @submit="onSubmit">
-      <label for="comment">댓글</label>
-      <input type="text" id="comment" v-model="reply" />
-      <button type="submit">입력</button>
+      <div class="comment-container">
+        <input
+          type="text"
+          id="comment"
+          v-model="reply"
+          class="comment-input"
+          placeholder="댓글을 입력하세요."
+        />
+        <button type="submit" class="comment-submit-btn">작성</button>
+      </div>
     </form>
-    <h2>댓글</h2>
-    <table border="1">
+    <table class="comment-tb">
       <thead>
         <tr>
-          <td>작성자</td>
-          <td>댓글</td>
-          <td>작성일</td>
+          <th>작성자</th>
+          <th>댓글</th>
+          <th>작성일</th>
         </tr>
       </thead>
       <comment-list-item
@@ -101,4 +108,51 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.title {
+  margin-top: 50px;
+  margin-left: 50px;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.comment-container {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.comment-input {
+  width: 70%;
+  margin-left: 50px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid gray;
+}
+
+.comment-submit-btn {
+  width: 80px;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: gray;
+  color: whitesmoke;
+}
+
+.comment-tb {
+  width: 80%;
+  margin-left: 50px;
+  border-top: 2px solid rgb(228, 228, 228);
+  border-bottom: 2px solid rgb(228, 228, 228);
+}
+
+.comment-tb th {
+  padding: 10px;
+}
+
+.comment-tb tbody tr {
+  border-top: 1px solid rgba(220, 220, 220, 0.498);
+}
+</style>

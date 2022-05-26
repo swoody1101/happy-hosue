@@ -149,6 +149,11 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.title {
+  margin-left: 20px;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
 .articleTb {
   width: 100%;
   border-top: 4px solid rgb(228, 228, 228);
@@ -165,12 +170,6 @@ export default {
 
 .notice {
   background-color: rgba(255, 213, 213, 0.239);
-}
-
-.title {
-  margin-left: 20px;
-  text-align: left;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
 .article-title {

@@ -1,5 +1,6 @@
 package com.ssafy.vue.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.ssafy.vue.dto.QnADto;
@@ -27,4 +28,6 @@ public interface QnAService {
 	String getTitle(int qna_no);
 
 	int updateGroupOrder(int group_order, int group_no);
+
+	List<QnADto> selectGroup(int group_no);
 }

@@ -85,5 +85,13 @@
 		DELETE FROM QNA
 		WHERE QNA_NO = #{qna_no}
 	</delete>
+	
+	<select id="selectGroup" resultType="QnADto">
+		SELECT *
+		FROM QNA
+		WHERE GROUP_NO=#{group_no}
+		ORDER BY 
+		GROUP_ORDER ASC
+	</select>
 
 </mapper>

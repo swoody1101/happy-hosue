@@ -10,7 +10,7 @@
         >
           <b-form-input
             id="userid"
-            :disabled="isUserid"
+            disabled
             v-model="qna.writer"
             type="text"
             required
@@ -48,7 +48,7 @@ export default {
         group_order: 0,
         depth: 0,
         title: "",
-        writer: "",
+        writer: this.$store.state.memberStore.userInfo.userid,
         content: "",
       },
       isUserid: false,
@@ -58,6 +58,7 @@ export default {
     api.get(`/qna/detail/${this.$route.params.qna_no}`).then(({ data }) => {
       console.log("data", data);
       this.qna = data;
+      this.qna.content = null;
     });
   },
   methods: {

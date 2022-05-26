@@ -2,9 +2,7 @@
   <b-container class="bv-example-row mt-3">
     <b-row>
       <b-col>
-        <b-alert show>
-          <h3>글목록</h3>
-        </b-alert>
+        <h5 class="title">QnA 목록(전체 {{ totalCnt }}개)</h5>
       </b-col>
     </b-row>
     <b-row class="mb-1">
@@ -31,14 +29,16 @@
         </b-table-simple>
       </b-col>
     </b-row>
-    <b-button @click="prePage()">[이전]</b-button>
-    <b-button
-      v-for="index in pagesize"
-      :key="index"
-      @click="movePage(index + startPage - 1)"
-      >{{ index + startPage - 1 }}
-    </b-button>
-    <b-button @click="nextPage()">[다음]</b-button>
+    <div class="page-container">
+      <b-button @click="prePage()">[이전]</b-button>
+      <b-button
+        v-for="index in pagesize"
+        :key="index"
+        @click="movePage(index + startPage - 1)"
+        >{{ index + startPage - 1 }}
+      </b-button>
+      <b-button @click="nextPage()">[다음]</b-button>
+    </div>
   </b-container>
 </template>
 
@@ -63,6 +63,7 @@ export default {
       startPage: 1,
       endPage: 1,
       totalPage: 1,
+      totalCnt: 0,
     };
   },
   created() {
@@ -82,6 +83,7 @@ export default {
         this.startPage = data.startPage;
         this.endPage = data.endPage;
         this.totalPage = data.totalPage;
+        this.totalCnt = data.qnaList.length;
       });
     },
     moveWrite() {
@@ -101,7 +103,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.title {
+  margin-left: 20px;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+}
 .tdClass {
   width: 50px;
   text-align: center;
@@ -110,5 +118,9 @@ export default {
 .tdSubject {
   width: 300px;
   text-align: left;
+}
+
+.page-container {
+  text-align: center;
 }
 </style>

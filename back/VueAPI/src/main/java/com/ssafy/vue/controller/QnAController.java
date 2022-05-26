@@ -50,6 +50,20 @@ public class QnAController {
 		return new ResponseEntity<>(qService.selectOne(qna_no), HttpStatus.OK);
 	}
 
+	@ApiOperation(value = "글 번호에 해당하는 그룹 번호를 반환한다.", response = Integer.class)
+	@GetMapping("/group/{qna_no}")
+	public ResponseEntity<Integer> groupNo(@PathVariable int qna_no) {
+		logger.debug("getGroupNo - 호출");
+		return new ResponseEntity<>(qService.getGroupNo(qna_no), HttpStatus.OK);
+	}
+
+	@ApiOperation(value = "그룹에 해당하는 글의 정보를 반환한다.", response = QnADto.class)
+	@GetMapping("/detail/list/{group_no}")
+	public ResponseEntity<List<QnADto>> selectGroup(@PathVariable int group_no) {
+		logger.debug("selectGroup - 호출");
+		return new ResponseEntity<>(qService.selectGroup(group_no), HttpStatus.OK);
+	}
+
 	@ApiOperation(value = "새 글 쓰기. 그리고 DB입력 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@PostMapping("/writenew")
 	public ResponseEntity<String> createOriginal(@RequestBody QnADto qnaDto) {

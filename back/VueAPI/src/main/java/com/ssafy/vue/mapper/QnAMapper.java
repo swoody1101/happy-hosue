@@ -12,6 +12,8 @@ public interface QnAMapper {
 
 	List<QnADto> list(@Param("start") int start, @Param("count") int count);
 
+	List<QnADto> selectGroup(int group_no);
+
 	QnADto selectOne(int qna_no);
 
 	int createOriginal(QnADto qnaDto);

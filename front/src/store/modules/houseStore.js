@@ -9,6 +9,9 @@ import {
 const houseStore = {
   namespaced: true,
   state: {
+    sido: "",
+    gugun: "",
+    dong: "",
     sidos: [{ value: null, text: "선택하세요" }],
     guguns: [{ value: null, text: "선택하세요" }],
     dongs: [{ value: null, text: "선택하세요" }],
@@ -19,6 +22,15 @@ const houseStore = {
   getters: {},
 
   mutations: {
+    SET_SIDO_NAME: (state, sidoName) => {
+      state.sido = sidoName;
+    },
+    SET_GUGUN_NAME: (state, gugunName) => {
+      state.gugun = gugunName;
+    },
+    SET_DONG_NAME: (state, dongName) => {
+      state.dong = dongName;
+    },
     SET_SIDO_LIST: (state, sidos) => {
       sidos.forEach((sidoName) => {
         state.sidos.push({ value: sidoName, text: sidoName });
@@ -45,11 +57,10 @@ const houseStore = {
     },
     SET_HOUSE_LIST: (state, houses) => {
       state.houses = houses;
-      console.log("house", houses);
+      console.log("house", houses[0].address);
     },
     SET_DETAIL_HOUSE: (state, house) => {
       state.house = house;
-      console.log("house: ", house);
     },
   },
 
@@ -94,6 +105,9 @@ const houseStore = {
       );
     },
     getDealList: ({ commit }, params) => {
+      commit("SET_SIDO_NAME", params.siguName);
+      commit("SET_GUGUN_NAME", params.gugunName);
+      commit("SET_GUGUN_NAME", params.dongName);
       dealList(
         params,
         (response) => {

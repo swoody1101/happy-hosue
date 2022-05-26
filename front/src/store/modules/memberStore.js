@@ -1,13 +1,12 @@
 import jwt_decode from "jwt-decode";
-import { login } from "@/api/member.js";
-import { findById } from "../../api/member";
-
+import { findById, login, userModify } from "@/api/member.js";
 const memberStore = {
   namespaced: true,
   state: {
     isLogin: false,
     isLoginError: false,
     userInfo: null,
+    username: null,
   },
   getters: {
     checkUserInfo: function (state) {
@@ -54,6 +53,17 @@ const memberStore = {
           } else {
             console.log("유저 정보 없음!!");
           }
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+    },
+    setUserInfo({ commit }, user) {
+      userModify(
+        user,
+        (response) => {
+          commit("SET_USER_INFO", response.data.userInfo);
         },
         (error) => {
           console.log(error);

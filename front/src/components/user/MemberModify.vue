@@ -118,7 +118,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import { userModify, sendEmailCode } from "@/api/member.js";
+import { sendEmailCode } from "@/api/member.js";
 const memberStore = "memberStore";
 
 export default {
@@ -140,10 +140,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(memberStore, [("isLogin", "isLoginError")]),
+    ...mapState(memberStore, ["isLogin", "isLoginError", "userInfo"]),
   },
   methods: {
-    ...mapActions(memberStore, ["userConfirm", "getUserInfo"]),
+    ...mapActions(memberStore, ["userConfirm", "getUserInfo", "setUserInfo"]),
     async confirm() {
       await this.userConfirm(this.member);
       let token = sessionStorage.getItem("access-token");
@@ -184,15 +184,8 @@ export default {
         alert("이메일 인증을 완료해주세요");
       } else {
         this.member.email = this.emailId + "@" + this.emailAddress;
-        userModify(
-          this.member,
-          () => {
-            this.$router.push({ name: "mypage" });
-          },
-          (error) => {
-            console.log(error);
-          },
-        );
+        this.setUserInfo(this.member);
+        this.$router.push({ name: "home" });
       }
     },
   },

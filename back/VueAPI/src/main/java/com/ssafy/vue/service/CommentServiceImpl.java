@@ -101,6 +101,11 @@ public class CommentServiceImpl implements CommentService{
 	
 	@Override
 	public boolean modifyComment(CommentDto comment) {
+		StringBuilder ccontent = new StringBuilder();
+		for (int i = 0; i < comment.getCdepth(); i++)
+			ccontent.append("  └ RE: ");
+		ccontent.append(comment.getCcontent());
+		comment.setCcontent(ccontent.toString());
 		return commentMapper.modifyComment(comment) == 1;
 	}
 

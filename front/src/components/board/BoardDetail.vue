@@ -84,7 +84,7 @@ export default {
         name: "boardModify",
         params: { articleno: this.article.bno },
       });
-      console.log(this.article.bno);
+      console.log("bno", this.article.bno);
     },
     deleteArticle() {
       if (confirm("정말로 삭제?")) {
@@ -97,7 +97,6 @@ export default {
       }
     },
     breadCountUp() {
-      console.log(this.breadCount);
       readCountUpArticle(
         this.bno,
         () => {},
@@ -105,7 +104,6 @@ export default {
           console.log(error);
         },
       );
-      console.log(this.breadCount);
     },
   },
 };

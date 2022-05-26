@@ -1,5 +1,6 @@
 import jwt_decode from "jwt-decode";
 import { findById, login, userModify } from "@/api/member.js";
+
 const memberStore = {
   namespaced: true,
   state: {

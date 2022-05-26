@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ssafy.vue.dto.TempDealData;
+import com.ssafy.vue.dto.ReturnDealData;
 import com.ssafy.vue.service.AptService;
 
 import io.swagger.annotations.ApiOperation;
@@ -66,13 +66,13 @@ public class AptController {
 	@ApiOperation(value = "검색 거래정보 반환", notes = "검색어가 있을 때 거래정보 반환한다.", response = Object.class)
 	@GetMapping("/dealInfo")
 	@ResponseBody
-	public ResponseEntity<List<TempDealData>> dealInfo(String siguName, String gugunName, String dongName,
+	public ResponseEntity<List<ReturnDealData>> dealInfo(String siguName, String gugunName, String dongName,
 			String keyword) {
 		logger.debug("dealInfo 호출");
 		String area = aptService.getAreaCode(siguName, gugunName, dongName);
 		if (keyword == null)
-			return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area), HttpStatus.OK);
+			return new ResponseEntity<List<ReturnDealData>>(aptService.dealInfo(area), HttpStatus.OK);
 
-		return new ResponseEntity<List<TempDealData>>(aptService.dealInfo(area, keyword), HttpStatus.OK);
+		return new ResponseEntity<List<ReturnDealData>>(aptService.dealInfo(area, keyword), HttpStatus.OK);
 	}
 }

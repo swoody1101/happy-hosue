@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ssafy.vue.dto.HouseDeal;
 import com.ssafy.vue.dto.HouseInfo;
-import com.ssafy.vue.dto.TempDealData;
+import com.ssafy.vue.dto.ReturnDealData;
 
 public interface AptService {
 	List<String> siguList();
@@ -13,9 +13,9 @@ public interface AptService {
 
 	List<String> dongList(String siguName, String gugunName);
 
-	List<TempDealData> dealInfo(String area);
+	List<ReturnDealData> dealInfo(String area);
 
-	List<TempDealData> dealInfo(String area, String keyword);
+	List<ReturnDealData> dealInfo(String area, String keyword);
 
 	String getAreaCode(String si);
 
@@ -32,6 +32,5 @@ public interface AptService {
 	HouseInfo select(String aptCode);
 
 	String selectDong(String dong, String code5);
-
 
 }

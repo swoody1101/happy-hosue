@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ssafy.vue.dto.HouseDeal;
 import com.ssafy.vue.dto.HouseInfo;
-import com.ssafy.vue.dto.TempDealData;
+import com.ssafy.vue.dto.ReturnDealData;
 import com.ssafy.vue.mapper.AreaMapper;
 import com.ssafy.vue.mapper.HouseDealMapper;
 import com.ssafy.vue.mapper.HouseInfoMapper;
@@ -38,12 +38,12 @@ public class AptServiceImpl implements AptService {
 	}
 
 	@Override
-	public List<TempDealData> dealInfo(String area) {
+	public List<ReturnDealData> dealInfo(String area) {
 		return hdMapper.selectAllByArea(area);
 	}
 
 	@Override
-	public List<TempDealData> dealInfo(String area, String keyword) {
+	public List<ReturnDealData> dealInfo(String area, String keyword) {
 		return hdMapper.selectAllByKeyword(area, keyword);
 	}
 

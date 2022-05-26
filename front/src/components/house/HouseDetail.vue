@@ -6,7 +6,7 @@
         <li>주소 : {{ h.address }}</li>
         <li>면적 : {{ h.area }}</li>
         <li>층수 : {{ h.floor }}층</li>
-        <li>건축일 : {{ h.dealDate }}</li>
+        <li>건축년도 : {{ h.builtYear }}</li>
       </ul>
     </div>
   </b-container>

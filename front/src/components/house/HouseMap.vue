@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="map"></div>
-    <button @click="addMarker">불러와</button>
   </div>
 </template>
 
@@ -57,7 +56,7 @@ export default {
       var container = document.getElementById("map");
       var options = {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 5,
+        level: 1,
       };
 
       this.map = new kakao.maps.Map(container, options);
@@ -155,7 +154,8 @@ export default {
 
 <style>
 #map {
-  width: 400px;
-  height: 300px;
+  margin-left: -30px;
+  width: 120%;
+  height: 1300px;
 }
 </style>

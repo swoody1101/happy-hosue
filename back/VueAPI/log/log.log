@@ -5811,3 +5811,4 @@ com.ssafy.vue.controller.QnAController#selectOne(int) mapped.
 [2m2022-05-26 19:54:25.411[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveNotice 호출
 [2m2022-05-26 19:54:25.411[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
 [2m2022-05-26 19:54:25.802[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 19:54:49.159[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출

@@ -7,11 +7,15 @@
           :options="sidos"
           @change="gugunList"
         ></b-form-select>
+      </b-col>
+      <b-col class="sm-3">
         <b-form-select
           v-model="gugunName"
           :options="guguns"
           @change="dongList"
         ></b-form-select>
+      </b-col>
+      <b-col class="sm-3">
         <b-form-select v-model="dongName" :options="dongs"></b-form-select>
       </b-col>
     </b-row>

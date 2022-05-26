@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ssafy.vue.dto.MemberDto;
 import com.ssafy.vue.service.JwtServiceImpl;
 import com.ssafy.vue.service.MemberService;
@@ -47,23 +48,38 @@ public class MemberController {
 	@ApiOperation(value = "회원가입", response = List.class)
 	@PostMapping("/join")
 	public String join(@RequestBody MemberDto member) {
-		System.out.println("###" + member);
 		member.setRole("ROLE_USER");
 		memberService.insert(member);
 		return "회원가입 완료";
 	}
 
+//	@ApiOperation(value = "회원 탈퇴")
+//	@DeleteMapping("/secession")
+//	public void secession(@RequestBody MemberDto user) {
+//		System.out.println("id: " + user.getUserid() + ", userpwd: " + user.getUserpwd());
+//		memberService.delete(user.getUserid(), user.getUserpwd());
+//	}
+
 	@ApiOperation(value = "회원 탈퇴")
 	@DeleteMapping("/secession")
-	public void secession(@RequestBody MemberDto user) {
-		System.out.println("id: " + user.getUserid() + ", userpwd: " + user.getUserpwd());
-		memberService.delete(user.getUserid(), user.getUserpwd());
+	public void secession(String userid, String userpwd) {
+		System.out.println("id: " + userid + ", userpwd: " + userpwd);
+		memberService.delete(userid, userpwd);
 	}
 
 	@ApiOperation(value = "ID 중복체크", response = Boolean.class)
 	@PostMapping("/idCheck")
 	public boolean idCheck(@RequestBody String userid) {
 		return memberService.idCheck(userid);
+	}
+
+	@ApiOperation(value = "이메일 반환", response = String.class)
+	@PostMapping("/getEmail")
+	public String getEmail(@RequestBody MemberDto member) {
+		System.out.println("###" + member.getUserid());
+		System.out.println(
+				"userid: " + member.getUserid() + "mail:" + memberService.findById(member.getUserid()).getEmail());
+		return memberService.findById(member.getUserid()).getEmail();
 	}
 
 	@ApiOperation(value = "로그인", notes = "Access-token과 로그인 결과 메세지를 반환한다.", response = Map.class)

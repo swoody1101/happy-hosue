@@ -16,22 +16,18 @@ public class MemberDto {
 	private String email;
 	@ApiModelProperty(value = "회원 등급(권한)")
 	private String role;
-	@ApiModelProperty(value = "소셜 로그인 시 어떤 소셜을 통해 로그인했는지")
-	private String provider;
-	@ApiModelProperty(value = "소셜 로그인 식별 ID")
-	private String providerId;
+//	@ApiModelProperty(value = "소셜 로그인 시 어떤 소셜을 통해 로그인했는지")
+//	private String provider;
+//	@ApiModelProperty(value = "소셜 로그인 식별 ID")
+//	private String providerId;
 
 	public MemberDto() {
 
 	}
 
-	public MemberDto(String userid, String username, String userpwd, String email, String provider, String providerId) {
+	public MemberDto(String userid, String userpwd) {
 		this.userid = userid;
-		this.username = username;
 		this.userpwd = userpwd;
-		this.email = email;
-		this.provider = provider;
-		this.providerId = providerId;
 	}
 
 	public MemberDto(String userid, String username, String userpwd, String email) {
@@ -81,26 +77,28 @@ public class MemberDto {
 		this.role = role;
 	}
 
-	public String getProvider() {
-		return provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-	}
-
-	public String getProviderId() {
-		return providerId;
-	}
-
-	public void setProviderId(String providerId) {
-		this.providerId = providerId;
-	}
+//	public String getProvider() {
+//		return provider;
+//	}
+//
+//	public void setProvider(String provider) {
+//		this.provider = provider;
+//	}
+//
+//	public String getProviderId() {
+//		return providerId;
+//	}
+//
+//	public void setProviderId(String providerId) {
+//		this.providerId = providerId;
+//	}
 
 	@Override
 	public String toString() {
 		return "MemberDto [userid=" + userid + ", username=" + username + ", userpwd=" + userpwd + ", email=" + email
-				+ ", role=" + role + ", provider=" + provider + ", providerId=" + providerId + "]";
+				+ ", role=" + role +
+//						+ ", provider=" + provider + ", providerId=" + providerId +
+				"]";
 	}
 
 }

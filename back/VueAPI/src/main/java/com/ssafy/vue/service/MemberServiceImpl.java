@@ -56,7 +56,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public boolean idCheck(String userid) {
-		return memberMapper.idCheck(userid.substring(1, userid.length()-1)) == null;
+		return memberMapper.idCheck(userid.substring(1, userid.length() - 1)) == null;
+	}
+
+	@Override
+	public int updatePwd(String userid, String userpwd) {
+		return memberMapper.updatePwd(userid, userpwd);
 	}
 
 }

@@ -50,7 +50,7 @@
 	
 	<delete id="delete" parameterType="String">
 		DELETE FROM member
-		WHERE userid = #{userid}
+		WHERE userid = #{userid} and userpwd = #{userpwd}
 	</delete>
 	
 	<select id="idCheck" parameterType="String" resultType="String">
@@ -58,4 +58,10 @@
 		FROM MEMBER
 		WHERE USERID=#{userid}
 	</select>
+	
+	<update id="updatePwd" parameterType="String">
+		UPDATE MEMBER
+		SET USERPWD=#{userpwd}
+		WHERE USERID=#{userid}
+	</update>
 </mapper>

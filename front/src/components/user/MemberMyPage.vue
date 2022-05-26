@@ -40,7 +40,7 @@
           <hr class="my-4" />
 
           <b-button variant="primary" href="#" class="mr-1"
-            >비밀번호 찾기</b-button
+            >회원정보 수정</b-button
           >
           <b-button variant="danger" @click="secession">회원탈퇴</b-button>
         </b-jumbotron>
@@ -53,6 +53,7 @@
 <script>
 import { mapState } from "vuex";
 import { secession } from "@/api/member.js";
+import { mapMutations } from "vuex";
 
 const memberStore = "memberStore";
 
@@ -74,14 +75,25 @@ export default {
       this.user.userpwd = pw;
       console.log(this.user);
       secession(
-        this.user,
+        this.$store.state.memberStore.userInfo.userid,
+        pw,
         () => {
-          console.log("delete");
+          this.logout();
+          alert("회원탈퇴가 완료되었습니다");
+          this.$router.push({ name: "home" });
         },
         (error) => {
           console.log(error);
         },
       );
+    },
+    ...mapMutations(memberStore, ["SET_IS_LOGIN", "SET_USER_INFO"]),
+    logout() {
+      // console.log("memberStore : ", ms);
+      this.SET_IS_LOGIN(false);
+      this.SET_USER_INFO(null);
+      sessionStorage.removeItem("access-token");
+      //   if (this.$route.path != "/") this.$router.push({ name: "home" });
     },
   },
 };

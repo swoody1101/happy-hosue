@@ -61,10 +61,7 @@ export default {
   name: "MemberMyPage",
   data() {
     return {
-      user: {
-        userid: null,
-        userpwd: null,
-      },
+      user: {},
     };
   },
   components: {},
@@ -74,7 +71,7 @@ export default {
   methods: {
     secession() {
       let pw = prompt("정말로 삭제하시려면 비밀번호를 입력해주세요");
-      this.user.userid = this.$store.state.memberStore.userInfo.userid;
+      this.user = this.userInfo;
       this.user.userpwd = pw;
       console.log(this.user);
       secession(

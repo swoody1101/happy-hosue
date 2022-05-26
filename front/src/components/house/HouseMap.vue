@@ -152,10 +152,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #map {
-  margin-left: -30px;
-  width: 120%;
+  margin-left: 100px;
+  width: 100%;
   height: 1300px;
 }
 </style>

@@ -27,7 +27,7 @@ export default {
 /* 전체 가운데 정렬 해주기 */
 .container {
   margin: auto;
-  min-width: 1000px;
+  min-width: 300px;
   max-width: 1400px;
 }
 </style>

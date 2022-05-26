@@ -69,15 +69,12 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-.apt {
-  width: 50px;
-}
 .mouse-over-bgcolor {
   background-color: lightblue;
 }
 .house-item-container {
   border: 1px solid rgb(195, 195, 195);
-  width: 50%;
+  /* width: 50%; */
 }
 .house-item-title {
   font-size: 22px;

@@ -5812,3 +5812,55 @@ com.ssafy.vue.controller.QnAController#selectOne(int) mapped.
 [2m2022-05-26 19:54:25.411[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
 [2m2022-05-26 19:54:25.802[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
 [2m2022-05-26 19:54:49.159[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 19:55:22.533[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 19:56:30.736[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-26 19:56:35.413[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-26 19:56:35.435[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m getGroupNo - 호출
+[2m2022-05-26 19:56:35.450[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectGroup - 호출
+[2m2022-05-26 19:56:39.817[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-26 19:56:46.254[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-26 19:56:46.276[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m getGroupNo - 호출
+[2m2022-05-26 19:56:46.288[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectGroup - 호출
+[2m2022-05-26 19:56:46.955[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-26 19:56:48.214[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-26 19:56:48.234[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m getGroupNo - 호출
+[2m2022-05-26 19:56:48.246[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectGroup - 호출
+[2m2022-05-26 19:56:50.655[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-26 19:56:51.507[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-26 19:56:51.528[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m getGroupNo - 호출
+[2m2022-05-26 19:56:51.551[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectGroup - 호출
+[2m2022-05-26 19:56:53.068[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m selectOne - 호출
+[2m2022-05-26 20:02:38.857[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveNotice 호출
+[2m2022-05-26 20:02:38.858[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
+[2m2022-05-26 20:02:40.001[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:02:58.799[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveNotice 호출
+[2m2022-05-26 20:02:58.800[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m retrieveBoard 호출
+[2m2022-05-26 20:02:59.729[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mcom.ssafy.vue.controller.QnAController  [0;39m [2m:[0;39m qnaList - 호출
+[2m2022-05-26 20:03:00.396[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:03:02.065[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:06:35.601[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:06:42.467[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:06:50.068[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:06:58.854[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:07:55.603[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:10:12.228[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:10:34.855[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:10:38.546[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:10:40.804[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:10:41.449[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:11:40.486[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:11:46.744[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:11:52.222[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:12:29.467[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:13:10.416[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:13:13.929[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:20:15.096[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:20:25.924[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:20:31.988[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:20:39.156[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:24:08.388[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:31:50.384[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:52:34.469[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m gugunCode 호출
+[2m2022-05-26 20:53:21.729[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:58:52.633[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출
+[2m2022-05-26 20:58:52.822[0;39m [32mDEBUG[0;39m [35m32044[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m sidoList 호출

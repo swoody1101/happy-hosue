@@ -1,10 +1,12 @@
 <template>
   <b-container v-if="houses && houses.length != 0" class="bv-example-row mt-3">
-    <house-list-item
-      v-for="(house, index) in houses"
-      :key="index"
-      :house="house"
-    />
+    <div class="list-container">
+      <house-list-item
+        v-for="(house, index) in houses"
+        :key="index"
+        :house="house"
+      />
+    </div>
   </b-container>
   <b-container v-else class="bv-example-row mt-3">
     <b-row>
@@ -36,4 +38,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.list-container {
+  height: 1100px;
+  overflow: scroll;
+  margin-top: -200px;
+}
+</style>

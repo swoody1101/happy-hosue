@@ -40,8 +40,7 @@ export default {
 
 <style scoped>
 .list-container {
-  height: 1100px;
+  height: 1500px;
   overflow: scroll;
-  margin-top: -200px;
 }
 </style>

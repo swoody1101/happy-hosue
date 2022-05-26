@@ -6,9 +6,7 @@
         <td class="aaaa search-bar">
           <house-search-bar></house-search-bar>
         </td>
-        <td>
-          <div style="height: 300px; width: 600px; background-color: red"></div>
-        </td>
+        <td></td>
       </tr>
       <tr>
         <td class="aaaa">

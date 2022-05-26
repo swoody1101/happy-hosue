@@ -46,6 +46,9 @@
               @click="movePage"
               >회원가입</b-button
             >
+            <b-button type="button" class="m-1" @click="findPwd"
+              >비밀번호를 잊으셨나요?</b-button
+            >
           </b-form>
         </b-card>
       </b-col>
@@ -56,6 +59,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
+import { newPwd, idCheck, getEmail } from "@/api/member.js";
 
 const memberStore = "memberStore";
 
@@ -84,6 +88,45 @@ export default {
     },
     movePage() {
       this.$router.push({ name: "signup" });
+    },
+    findPwd() {
+      let id = prompt("비밀번호를 찾을 ID를 입력해주세요");
+      idCheck(
+        id,
+        (data) => {
+          if (data.data) {
+            alert("존재하지 않는 id입니다!");
+          } else {
+            console.log(id);
+            let email = null;
+            getEmail(
+              { userid: id, userpwd: null, username: null, email: null },
+              (data) => {
+                console.log(data.data);
+                email = data.data;
+                console.log("email:" + email);
+                alert(
+                  "해당 아이디의 이메일 주소(" +
+                    email +
+                    ")로 새로운 비밀번호를 발급하였습니다. 새로운 비밀번호로 로그인해주세요",
+                );
+                newPwd(
+                  id,
+                  email,
+                  () => {},
+                  () => {},
+                );
+              },
+              (error) => {
+                console.log(error);
+              },
+            );
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
     },
   },
 };

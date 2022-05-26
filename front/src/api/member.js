@@ -22,6 +22,13 @@ async function findById(memberid, success, fail) {
   await api.get(`/user/info/${memberid}`).then(success).catch(fail);
 }
 
+async function getEmail(memberid, success, fail) {
+  await api
+    .post(`/user/getEmail`, JSON.stringify(memberid))
+    .then(success)
+    .catch(fail);
+}
+
 async function sendEmailCode(memberEmail, emailAddress, success, fail) {
   await api
     .post(`/mail/send?id=${memberEmail}&address=${emailAddress}`)
@@ -29,11 +36,28 @@ async function sendEmailCode(memberEmail, emailAddress, success, fail) {
     .catch(fail);
 }
 
-async function secession(user, success, fail) {
+async function secession(userid, userpwd, success, fail) {
+  console.log(userid + " " + userpwd);
   await api
-    .delete(`/user/secession`, JSON.stringify(user))
+    .delete(`/user/secession?userid=${userid}&userpwd=${userpwd}`)
     .then(success)
     .catch(fail);
 }
 
-export { login, findById, sendEmailCode, join, idCheck, secession };
+async function newPwd(memberEmail, emailAddress, success, fail) {
+  await api
+    .post(`/mail/newPw?userid=${memberEmail}&address=${emailAddress}`)
+    .then(success)
+    .catch(fail);
+}
+
+export {
+  login,
+  findById,
+  sendEmailCode,
+  join,
+  idCheck,
+  secession,
+  newPwd,
+  getEmail,
+};

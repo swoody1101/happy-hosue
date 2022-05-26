@@ -27,4 +27,6 @@ public interface MemberMapper {
 
 	public String idCheck(String userid);
 
+	int updatePwd(String userid, String userpwd);
+
 }

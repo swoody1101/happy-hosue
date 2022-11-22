@@ -1,67 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ssafy.vue.mapper.MemberMapper">
+<mapper namespace="com.ssafy.happyhouse.mapper.MemberMapper">
 
-	<select id="login" parameterType="memberDto" resultType="memberDto">
-		select username, userid, email, role
-		from member
-		where userid = #{userid} and userpwd = #{userpwd}
-	</select>
-	
-	<select id="userInfo" parameterType="String" resultType="memberDto">
-		select username, userid, email, role
-		from member
-		where userid = #{userid}
-	</select>
-	
-	<select id="selectOne" parameterType="String" resultType="memberDto">
-		SELECT *
-		FROM member
-		WHERE userid = #{userid}
-		AND userpwd = #{userpwd}
-	</select>
-	
-	<select id="findById" parameterType="String" resultType="memberDto">
-		SELECT *
-		FROM member
-		WHERE userid = #{userid}
-	</select>
-	
-	<insert id="insert" parameterType="memberDto">
-		INSERT INTO member(userid, username, userpwd, email, role)
-		VALUES(#{userid}, #{username}, #{userpwd}, #{email}, #{role})
-	</insert>
-	
-	<insert id="insertSocial" parameterType="memberDto">
-		INSERT INTO member(userid, username, userpwd, email, provider, providerId, role)
-		VALUES(#{userid}, #{username}, #{userpwd}, #{email}, #{provider}, #{providerId}, #{role})
-	</insert>
-	
-	<update id="update" parameterType="memberDto">
-		UPDATE member
-		SET
-		userpwd = #{userpwd},
-		username = #{username},
-		EMAIL = #{email}
-		WHERE userid = #{userid}
-	</update>
-	
-	<delete id="delete" parameterType="String">
-		DELETE FROM member
-		WHERE userid = #{userid} and userpwd = #{userpwd}
-	</delete>
-	
-	<select id="idCheck" parameterType="String" resultType="String">
-		SELECT USERID
-		FROM MEMBER
-		WHERE USERID=#{userid}
-	</select>
-	
-	<update id="updatePwd" parameterType="String">
-		UPDATE MEMBER
-		SET USERPWD=#{userpwd}
-		WHERE USERID=#{userid}
-	</update>
+    <select id="login" parameterType="memberDto" resultType="memberDto">
+        select username, userid, email, role
+        from member
+        where userid = #{userid}
+          and userpwd = #{userpwd}
+    </select>
+
+    <select id="userInfo" parameterType="String" resultType="memberDto">
+        select username, userid, email, role
+        from member
+        where userid = #{userid}
+    </select>
+
+    <select id="selectOne" parameterType="String" resultType="memberDto">
+        SELECT *
+        FROM member
+        WHERE userid = #{userid}
+          AND userpwd = #{userpwd}
+    </select>
+
+    <select id="findById" parameterType="String" resultType="memberDto">
+        SELECT *
+        FROM member
+        WHERE userid = #{userid}
+    </select>
+
+    <insert id="insert" parameterType="memberDto">
+        INSERT INTO member(userid, username, userpwd, email, role)
+        VALUES (#{userid}, #{username}, #{userpwd}, #{email}, #{role})
+    </insert>
+
+    <insert id="insertSocial" parameterType="memberDto">
+        INSERT INTO member(userid, username, userpwd, email, provider, providerId, role)
+        VALUES (#{userid}, #{username}, #{userpwd}, #{email}, #{provider}, #{providerId}, #{role})
+    </insert>
+
+    <update id="update" parameterType="memberDto">
+        UPDATE member
+        SET userpwd  = #{userpwd},
+            username = #{username},
+            EMAIL    = #{email}
+        WHERE userid = #{userid}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE
+        FROM member
+        WHERE userid = #{userid}
+          and userpwd = #{userpwd}
+    </delete>
+
+    <select id="idCheck" parameterType="String" resultType="String">
+        SELECT USERID
+        FROM MEMBER
+        WHERE USERID = #{userid}
+    </select>
+
+    <update id="updatePwd" parameterType="String">
+        UPDATE MEMBER
+        SET USERPWD=#{userpwd}
+        WHERE USERID = #{userid}
+    </update>
 </mapper>

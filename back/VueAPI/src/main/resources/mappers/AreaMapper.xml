@@ -1,92 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.vue.mapper.AreaMapper">
+<mapper namespace="com.ssafy.happyhouse.mapper.AreaMapper">
 
-	<insert id="insert" parameterType="com.ssafy.vue.dto.AreaInfo">
-		INSERT INTO baseaddress
-		(areaCode, siguCode, sidoCode, sidoName, gugunCode, gugunName,
-		dongCode, dongName)
-		VALUES
-		(#{areaCode}, #{siguCode}, #{sidoCode}, #{sidoName}, #{gugunCode},
-		#{gugunName}, #{dongCode}, #{dongName})
-	</insert>
+    <insert id="insert" parameterType="com.ssafy.happyhouse.dto.AreaInfo">
+        INSERT INTO baseaddress
+        (areaCode, siguCode, sidoCode, sidoName, gugunCode, gugunName,
+         dongCode, dongName)
+        VALUES (#{areaCode}, #{siguCode}, #{sidoCode}, #{sidoName}, #{gugunCode},
+                #{gugunName}, #{dongCode}, #{dongName})
+    </insert>
 
-	<select id="selectDong" parameterType="String"
-		resultType="String">
-		SELECT
-		areaCode
-		FROM baseaddress
-		WHERE dongName=#{dongName}
-		AND siguCode=#{siguCode}
-	</select>
+    <select id="selectDong" parameterType="String"
+            resultType="String">
+        SELECT areaCode
+        FROM baseaddress
+        WHERE dongName = #{dongName}
+          AND siguCode = #{siguCode}
+    </select>
 
-	<select id="selectAll" resultType="com.ssafy.vue.dto.AreaInfo">
-		SELECT
-		areaCode, siguCode, sidoCode, sidoName, gugunCode, gugunName, dongCode,
-		dongName
-		FROM baseaddress
-	</select>
+    <select id="selectAll" resultType="com.ssafy.happyhouse.dto.AreaInfo">
+        SELECT areaCode,
+               siguCode,
+               sidoCode,
+               sidoName,
+               gugunCode,
+               gugunName,
+               dongCode,
+               dongName
+        FROM baseaddress
+    </select>
 
-	<select id="siguList" resultType="String">
-		SELECT distinct sidoName
-		FROM baseaddress
-	</select>
+    <select id="siguList" resultType="String">
+        SELECT distinct sidoName
+        FROM baseaddress
+    </select>
 
-	<select id="gugunList" resultType="String"
-		parameterType="String">
-		SELECT distinct gugunName
-		FROM baseaddress
-		WHERE sidoName=#{siguName}
-		order by 1
-	</select>
+    <select id="gugunList" resultType="String"
+            parameterType="String">
+        SELECT distinct gugunName
+        FROM baseaddress
+        WHERE sidoName = #{siguName}
+        order by 1
+    </select>
 
-	<select id="dongList" resultType="String" parameterType="String">
-		select
-		distinct dongName
-		from baseaddress
-		where sidoName=#{siguName}
-		and gugunName like CONCAT('%', #{gugunName}, '%')
-		order by 1
-	</select>
+    <select id="dongList" resultType="String" parameterType="String">
+        select distinct dongName
+        from baseaddress
+        where sidoName = #{siguName}
+          and gugunName like CONCAT('%', #{gugunName}, '%')
+        order by 1
+    </select>
 
-	<select id="getAreaCodeBySi" resultType="String"
-		parameterType="String">
-		select
-		distinct sidoCode
-		from baseaddress
-		where sidoName like CONCAT('%', #{si}, '%')
-	</select>
+    <select id="getAreaCodeBySi" resultType="String"
+            parameterType="String">
+        select distinct sidoCode
+        from baseaddress
+        where sidoName like CONCAT('%', #{si}, '%')
+    </select>
 
-	<select id="getAreaCodeBySiGu" resultType="String"
-		parameterType="String">
-		select
-		distinct siguCode
-		from baseaddress
-		where sidoName like CONCAT('%', #{si}, '%')
-		and gugunName like CONCAT('%',
-		#{gu}, '%')
-	</select>
+    <select id="getAreaCodeBySiGu" resultType="String"
+            parameterType="String">
+        select distinct siguCode
+        from baseaddress
+        where sidoName like CONCAT('%', #{si}, '%')
+          and gugunName like CONCAT('%',
+                                    #{gu}, '%')
+    </select>
 
-	<select id="getAreaCodeBySiGuDong" resultType="String"
-		parameterType="String">
-		select
-		distinct areaCode
-		from baseaddress
-		where sidoName like CONCAT('%', #{si}, '%')
-		and gugunName like CONCAT('%',
-		#{gu}, '%')
-		and dongName like CONCAT('%', #{dong}, '%')
-	</select>
+    <select id="getAreaCodeBySiGuDong" resultType="String"
+            parameterType="String">
+        select distinct areaCode
+        from baseaddress
+        where sidoName like CONCAT('%', #{si}, '%')
+          and gugunName like CONCAT('%',
+                                    #{gu}, '%')
+          and dongName like CONCAT('%', #{dong}, '%')
+    </select>
 
-	<select id="getSiguCode" resultType="String">
-		select distinct CONCAT(sidoCode,gugunCode) from baseaddress
-	</select>
+    <select id="getSiguCode" resultType="String">
+        select distinct CONCAT(sidoCode, gugunCode)
+        from baseaddress
+    </select>
 
-	<select id="getAreaName" parameterType="String"
-		resultType="String">
-		SELECT AREANAME
-		FROM BASEADDRESS
-		WHERE AREACODE=#{areaCode}
-	</select>
-
+    <select id="getAreaName" parameterType="String"
+            resultType="String">
+        SELECT AREANAME
+        FROM BASEADDRESS
+        WHERE AREACODE = #{areaCode}
+    </select>
 </mapper>

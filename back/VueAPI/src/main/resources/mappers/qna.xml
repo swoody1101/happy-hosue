@@ -1,97 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.vue.mapper.QnAMapper">
-	<select id="list" resultType="QnADto">
-		SELECT *
-		FROM QNA
-		ORDER BY GROUP_NO
-		DESC,
-		GROUP_ORDER ASC
-		LIMIT #{start}, #{count}
-	</select>
+<mapper namespace="com.ssafy.happyhouse.mapper.QnAMapper">
+    <select id="list" resultType="QnADto">
+        SELECT *
+        FROM QNA
+        ORDER BY GROUP_NO
+                DESC,
+                 GROUP_ORDER ASC
+            LIMIT #{start}, #{count}
+    </select>
 
-	<select id="selectOne" resultType="QnADto">
-		SELECT *
-		FROM QNA
-		WHERE
-		QNA_NO=#{qna_no}
-	</select>
+    <select id="selectOne" resultType="QnADto">
+        SELECT *
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </select>
 
-	<select id="getGroupNo" resultType="int">
-		SELECT GROUP_NO
-		FROM QNA
-		WHERE QNA_NO=#{qna_no}
-	</select>
+    <select id="getGroupNo" resultType="int">
+        SELECT GROUP_NO
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </select>
 
-	<select id="getDepth" resultType="int">
-		SELECT DEPTH
-		FROM QNA
-		WHERE QNA_NO=#{qna_no}
-	</select>
-	
-	<select id="getOrder" resultType="int">
-		SELECT GROUP_ORDER
-		FROM QNA
-		WHERE QNA_NO=#{qna_no}
-	</select>
-	
-	<select id="getTitle" resultType="String">
-		SELECT TITLE
-		FROM QNA
-		WHERE QNA_NO=#{qna_no}
-	</select>
-	
-	<select id="selectTotalCount" resultType="int">
-		SELECT COUNT(*)
-		FROM QNA
-	</select>
+    <select id="getDepth" resultType="int">
+        SELECT DEPTH
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </select>
 
-	<insert id="createOriginal" parameterType="QnADto">
-		INSERT INTO
-		QNA(GROUP_NO, GROUP_ORDER, DEPTH, TITLE, WRITER, CONTENT)
-		VALUES(	
-			IFNULL(
-			(SELECT TMP.GN FROM
-				(SELECT MAX(GROUP_NO) + 1 AS GN FROM QNA) TMP), 1),
-		0,
-		1, #{title}, #{writer}, #{content}
-		)
-	</insert>
+    <select id="getOrder" resultType="int">
+        SELECT GROUP_ORDER
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </select>
 
-	<insert id="createReply" parameterType="QnADto">
-		INSERT INTO QNA(GROUP_NO,
-		GROUP_ORDER, DEPTH, TITLE, WRITER, CONTENT)
-		VALUES(#{group_no},
-		#{group_order}, #{depth}, #{title}, #{writer}, #{content})
-	</insert>
+    <select id="getTitle" resultType="String">
+        SELECT TITLE
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </select>
 
-	<update id="modify" parameterType="QnADto">
-		UPDATE QNA
-		SET TITLE =
-		#{title},
-		WRITER = #{writer},
-		CONTENT = #{content}
-		WHERE QNA_NO = #{qna_no}
-	</update>
-	
-	<update id="updateGroupOrder" parameterType="int">
-		UPDATE QNA
-		SET GROUP_ORDER = GROUP_ORDER+1
-		WHERE GROUP_ORDER >= #{group_order}
-		AND GROUP_NO = #{group_no}
-	</update>
+    <select id="selectTotalCount" resultType="int">
+        SELECT COUNT(*)
+        FROM QNA
+    </select>
 
-	<delete id="delete">
-		DELETE FROM QNA
-		WHERE QNA_NO = #{qna_no}
-	</delete>
-	
-	<select id="selectGroup" resultType="QnADto">
-		SELECT *
-		FROM QNA
-		WHERE GROUP_NO=#{group_no}
-		ORDER BY 
-		GROUP_ORDER ASC
-	</select>
+    <insert id="createOriginal" parameterType="QnADto">
+        INSERT INTO QNA(GROUP_NO, GROUP_ORDER, DEPTH, TITLE, WRITER, CONTENT)
+        VALUES (IFNULL(
+                        (SELECT TMP.GN
+                         FROM (SELECT MAX(GROUP_NO) + 1 AS GN FROM QNA) TMP), 1),
+                0,
+                1, #{title}, #{writer}, #{content})
+    </insert>
 
+    <insert id="createReply" parameterType="QnADto">
+        INSERT INTO QNA(GROUP_NO,
+                        GROUP_ORDER, DEPTH, TITLE, WRITER, CONTENT)
+        VALUES (#{group_no},
+                #{group_order}, #{depth}, #{title}, #{writer}, #{content})
+    </insert>
+
+    <update id="modify" parameterType="QnADto">
+        UPDATE QNA
+        SET TITLE   =
+                #{title},
+            WRITER  = #{writer},
+            CONTENT = #{content}
+        WHERE QNA_NO = #{qna_no}
+    </update>
+
+    <update id="updateGroupOrder" parameterType="int">
+        UPDATE QNA
+        SET GROUP_ORDER = GROUP_ORDER + 1
+        WHERE GROUP_ORDER >= #{group_order}
+          AND GROUP_NO = #{group_no}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM QNA
+        WHERE QNA_NO = #{qna_no}
+    </delete>
+
+    <select id="selectGroup" resultType="QnADto">
+        SELECT *
+        FROM QNA
+        WHERE GROUP_NO = #{group_no}
+        ORDER BY GROUP_ORDER ASC
+    </select>
 </mapper>

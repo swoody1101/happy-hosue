@@ -1,61 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.vue.mapper.CommentMapper">
+<mapper namespace="com.ssafy.happyhouse.mapper.CommentMapper">
 
-	<select id="selectCommentList" resultType="CommentDto">
-		SELECT * FROM comment
-		WHERE bno = #{bno}
-		ORDER BY cgroupOrder DESC,
-		cdepth ASC
-		LIMIT #{start}, #{count};
-	</select>
-	
-	<select id="selectCommentOne" resultType="CommentDto">
-		SELECT * FROM comment
-		WHERE cno = #{cno}
-	</select>
-	
-	<select id="selectTotalCommentCountByBoard" resultType="int">
-		SELECT COUNT(*) FROM comment
-		WHERE bno = #{bno}
-	</select>
-	
-	<select id="selectGroupNo" resultType ="int">
-		SELECT IFNULL(MAX(cgroupNo), 0) AS cgroupNo 
-		FROM comment
-	</select>
-	
-	<insert id="createComment" parameterType="CommentDto">
-		INSERT INTO COMMENT (bno, cgroupNo, cgroupOrder, cdepth, cwriter, ccontent)
-		VALUES (#{bno}, #{cgroupNo}, #{cgroupOrder}, #{cdepth}, #{cwriter}, #{ccontent})
-	</insert>
-	
-<!-- 	<insert id="createCommentOriginal" parameterType="CommentDto">
-		INSERT INTO COMMENT (bno, cgroupNo, cgroupOrder, cdepth, cwriter, ccontent)
-		VALUES (#{bno}, #{cgroupNo}, #{cgroupOrder}, #{cdepth}, #{cwriter}, #{ccontent})
-	</insert>
-	
-	<insert id="createCommentReply"  parameterType="CommentDto">
-		INSERT INTO COMMENT (bno, cgroupNo, cgroupOrder, cdepth, cwriter, ccontent)
-		VALUES (#{bno}, #{cgroupNo}, #{cgroupOrder}, #{cdepth}, #{cwriter}, #{ccontent})
-	</insert> -->
-	
-	<update id="updateCgroupOrder">
-		UPDATE comment
-		SET cgroupOrder = cgroupOrder+1
-		WHERE cgroupNo = #{cgroupNo}
-		AND cgroupOrder >= #{cgroupOrder}
-	</update>
-	
-	<update id="modifyComment" parameterType="CommentDto">
-		UPDATE comment
-		SET cwriter = #{cwriter}, ccontent = #{ccontent}
-		WHERE cno = #{cno}
-	</update>
-	
-	
-	<delete id="deleteComment">
-		DELETE FROM comment
-		WHERE cno = #{cno}
-	</delete>
+    <select id="selectCommentList" resultType="CommentDto">
+        SELECT *
+        FROM comment
+        WHERE bno = #{bno}
+        ORDER BY cgroupOrder DESC,
+                 cdepth ASC
+            LIMIT #{start}, #{count};
+    </select>
+
+    <select id="selectCommentOne" resultType="CommentDto">
+        SELECT *
+        FROM comment
+        WHERE cno = #{cno}
+    </select>
+
+    <select id="selectTotalCommentCountByBoard" resultType="int">
+        SELECT COUNT(*)
+        FROM comment
+        WHERE bno = #{bno}
+    </select>
+
+    <select id="selectGroupNo" resultType="int">
+        SELECT IFNULL(MAX(cgroupNo), 0) AS cgroupNo
+        FROM comment
+    </select>
+
+    <insert id="createComment" parameterType="CommentDto">
+        INSERT INTO COMMENT (bno, cgroupNo, cgroupOrder, cdepth, cwriter, ccontent)
+        VALUES (#{bno}, #{cgroupNo}, #{cgroupOrder}, #{cdepth}, #{cwriter}, #{ccontent})
+    </insert>
+
+    <update id="updateCgroupOrder">
+        UPDATE comment
+        SET cgroupOrder = cgroupOrder + 1
+        WHERE cgroupNo = #{cgroupNo}
+          AND cgroupOrder >= #{cgroupOrder}
+    </update>
+
+    <update id="modifyComment" parameterType="CommentDto">
+        UPDATE comment
+        SET cwriter  = #{cwriter},
+            ccontent = #{ccontent}
+        WHERE cno = #{cno}
+    </update>
+
+    <delete id="deleteComment">
+        DELETE
+        FROM comment
+        WHERE cno = #{cno}
+    </delete>
 </mapper>

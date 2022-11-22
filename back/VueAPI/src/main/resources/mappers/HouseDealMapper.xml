@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.vue.mapper.HouseDealMapper">
+<mapper namespace="com.ssafy.happyhouse.mapper.HouseDealMapper">
 
-	<insert id="insert" parameterType="com.ssafy.vue.dto.HouseDeal">
+	<insert id="insert" parameterType="com.ssafy.happyhouse.dto.HouseDeal">
 		INSERT INTO
 		housedeal
 		(aptCode, price, dealYear,dealMonth,dealDay)
 		VALUES
 		(#{aptCode}, #{price}, #{dealYear}, #{dealMonth}, #{dealDay})
 	</insert>
-	
-<!-- 	<select id="selectAll" resultType="com.ssafy.vue.dto.TempDealData"> -->
-<!-- 		SELECT  -->
-<!-- 		aptCode, price, dealYear, dealMonth, dealDay  -->
-<!-- 		FROM housedeal -->
-<!-- 	</select> -->
-	
-	<select id="selectAllByArea" resultType="com.ssafy.vue.dto.ReturnDealData" parameterType="String">
+
+	<select id="selectAllByArea" resultType="com.ssafy.happyhouse.dto.ReturnDealData" parameterType="String">
 		SELECT
 		d.dealNo, i.aptName, (select CONCAT(areaName, ' ', i.jibun) from baseaddress where areaCode=i.areaCode) as address,
 		CONCAT(d.dealYear, '/', d.dealMonth, '/', d.dealDay) as dealDate,
@@ -25,7 +19,7 @@
 		where left(i.areaCode, LENGTH(#{area})) = #{area} 
 	</select>
 	
-	<select id="selectAllByKeyword" resultType="com.ssafy.vue.dto.ReturnDealData" parameterType="String">
+	<select id="selectAllByKeyword" resultType="com.ssafy.happyhouse.dto.ReturnDealData" parameterType="String">
 		SELECT
 		d.dealNo, i.aptName, (select CONCAT(areaName, ' ', i.jibun) from baseaddress where areaCode=i.areaCode) as address,
 		CONCAT(d.dealYear, '/', d.dealMonth, '/', d.dealDay)as dealDate,
@@ -41,5 +35,4 @@
 		from areainfo a natural join houseinfo 
 		where a.areaCode = #{area}
 	</select>
-
 </mapper>

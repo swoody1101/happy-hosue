@@ -1,32 +1,30 @@
 package com.ssafy.happyhouse.mapper;
 
-import java.sql.SQLException;
-
+import com.ssafy.happyhouse.dto.MemberDto;
 import org.apache.ibatis.annotations.Mapper;
 
-import com.ssafy.happyhouse.dto.MemberDto;
+import java.sql.SQLException;
 
 @Mapper
 public interface MemberMapper {
 
-	public MemberDto login(MemberDto memberDto) throws SQLException;
+    public MemberDto login(MemberDto memberDto) throws SQLException;
 
-	public MemberDto userInfo(String userid) throws SQLException;
+    public MemberDto userInfo(String userid) throws SQLException;
 
-	int insert(MemberDto memberDto);
+    int insert(MemberDto memberDto);
 
-	int insertSocial(MemberDto memberDto);
+    int insertSocial(MemberDto memberDto);
 
-	MemberDto selectOne(String userid, String userpwd);
+    MemberDto selectOne(String userid, String userpwd);
 
-	MemberDto findById(String userid);
+    MemberDto findById(String userid);
 
-	int update(MemberDto memberDto);
+    int update(MemberDto memberDto);
 
-	int delete(String userid, String userpwd);
+    int delete(String userid, String userpwd);
 
-	public String idCheck(String userid);
+    public String idCheck(String userid);
 
-	int updatePwd(String userid, String userpwd);
-
+    int updatePwd(String userid, String userpwd);
 }

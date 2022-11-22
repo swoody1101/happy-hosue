@@ -63,5 +63,4 @@ public class MemberServiceImpl implements MemberService {
 	public int updatePwd(String userid, String userpwd) {
 		return memberMapper.updatePwd(userid, userpwd);
 	}
-
 }

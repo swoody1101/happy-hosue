@@ -7,6 +7,7 @@ import com.ssafy.happyhouse.dto.HouseInfo;
 import com.ssafy.happyhouse.dto.ReturnDealData;
 
 public interface AptService {
+
 	List<String> siguList();
 
 	List<String> gugunList(String siguName);
@@ -32,5 +33,4 @@ public interface AptService {
 	HouseInfo select(String aptCode);
 
 	String selectDong(String dong, String code5);
-
 }

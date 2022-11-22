@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @MapperScan(
-		basePackages = "com.ssafy.happyhouse.mapper"
+        basePackages = "com.ssafy.happyhouse.mapper"
 )
-public class DatabaseConfig {}
+public class DatabaseConfig {
+}

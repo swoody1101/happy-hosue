@@ -92,5 +92,4 @@ public class QnAServiceImpl implements QnAService {
 	public List<QnADto> selectGroup(int group_no) {
 		return qnaMapper.selectGroup(group_no);
 	}
-
 }

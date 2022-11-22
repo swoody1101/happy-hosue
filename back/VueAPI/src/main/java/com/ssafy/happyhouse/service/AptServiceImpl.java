@@ -86,5 +86,4 @@ public class AptServiceImpl implements AptService {
 	public String selectDong(String dong, String code5) {
 		return areaMapper.selectDong(dong, code5);
 	}
-
 }
